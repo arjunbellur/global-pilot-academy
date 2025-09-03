@@ -1,5 +1,7 @@
 # Global Pilot Academy Website
 
+Latest build fix applied - removed static export configuration for Cloudflare Pages compatibility.
+
 A modern, responsive website for Global Pilot Academy built with Next.js, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
