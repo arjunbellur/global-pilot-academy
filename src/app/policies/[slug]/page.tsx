@@ -251,6 +251,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+export async function generateStaticParams() {
+  const policySlugs = Object.keys(policies)
+  return policySlugs.map((slug) => ({
+    slug: slug,
+  }))
+}
+
 export default function PolicyPage({ params }: Props) {
   const policy = policies[params.slug as keyof typeof policies]
 

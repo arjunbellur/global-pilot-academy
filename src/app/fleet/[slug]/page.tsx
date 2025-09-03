@@ -217,6 +217,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+export async function generateStaticParams() {
+  const aircraftSlugs = Object.keys(aircraft)
+  return aircraftSlugs.map((slug) => ({
+    slug: slug,
+  }))
+}
+
 export default function AircraftDetailPage({ params }: Props) {
   const plane = aircraft[params.slug as keyof typeof aircraft]
 

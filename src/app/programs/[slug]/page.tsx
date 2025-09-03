@@ -217,6 +217,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+export async function generateStaticParams() {
+  const programSlugs = Object.keys(programs)
+  return programSlugs.map((slug) => ({
+    slug: slug,
+  }))
+}
+
 export default function ProgramDetailPage({ params }: Props) {
   const program = programs[params.slug as keyof typeof programs]
 

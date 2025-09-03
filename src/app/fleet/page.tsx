@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
-import { Plane, Clock, DollarSign, CheckCircle, MapPin, Wifi, Radio, Navigation } from 'lucide-react'
+import { ArrowRight, Plane, Clock, DollarSign, CheckCircle, MapPin, Wifi, Radio, Navigation } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Aircraft Fleet',

@@ -1,15 +1,7 @@
-import type { Metadata } from 'next'
-import FAQClient from '@/components/FAQClient'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Frequently Asked Questions - Global Pilot Academy',
-  description: 'Answers to common questions about flight training, enrollment, pricing, and student life at Global Pilot Academy in Tampa, FL.',
-  keywords: ['flight training FAQ', 'pilot school questions', 'aviation academy FAQ', 'flight training enrollment'],
-  openGraph: {
-    title: 'Frequently Asked Questions | Global Pilot Academy',
-    description: 'Answers to common questions about flight training at Global Pilot Academy.',
-  },
-}
+import { useState } from 'react'
+import { ChevronDown, ChevronUp, Search, Filter } from 'lucide-react'
 
 const faqCategories = [
   'All',
@@ -145,20 +137,161 @@ const faqs = [
   }
 ]
 
-export default function FAQPage() {
+export default function FAQClient() {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [expandedItems, setExpandedItems] = useState<number[]>([])
+
+  const toggleItem = (id: number) => {
+    setExpandedItems(prev =>
+      prev.includes(id)
+        ? prev.filter(item => item !== id)
+        : [...prev, id]
+    )
+  }
+
+  const filteredFaqs = faqs.filter(faq => {
+    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesCategory = selectedCategory === 'All' || faq.category === selectedCategory
+    return matchesSearch && matchesCategory
+  })
+
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-        <div className="container-custom text-center">
-          <h1 className="h1 mb-6">Frequently Asked Questions</h1>
-          <p className="p text-xl md:text-2xl max-w-3xl mx-auto text-gray-100">
-            Everything you need to know about flight training at Global Pilot Academy.
-          </p>
+      {/* JSON-LD FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })
+        }}
+      />
+
+      {/* Search and Filter */}
+      <section className="section">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            {/* Search Bar */}
+            <div className="relative mb-8">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search FAQs..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              />
+            </div>
+
+            {/* Category Filter */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {faqCategories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    selectedCategory === category
+                      ? 'bg-primary-500 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            {/* Results Count */}
+            <div className="text-center mb-8">
+              <p className="text-gray-600">
+                Showing {filteredFaqs.length} of {faqs.length} FAQs
+                {selectedCategory !== 'All' && ` in ${selectedCategory}`}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <FAQClient />
+      {/* FAQ List */}
+      <section className="section-sm bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto space-y-4">
+            {filteredFaqs.map((faq) => (
+              <div key={faq.id} className="card">
+                <button
+                  onClick={() => toggleItem(faq.id)}
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  aria-expanded={expandedItems.includes(faq.id)}
+                  aria-controls={`faq-answer-${faq.id}`}
+                >
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="px-2 py-1 bg-primary-100 text-primary-700 rounded text-xs font-medium">
+                        {faq.category}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <div className="ml-4 flex-shrink-0">
+                    {expandedItems.includes(faq.id) ? (
+                      <ChevronUp className="w-5 h-5 text-gray-400" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-400" />
+                    )}
+                  </div>
+                </button>
+
+                {expandedItems.includes(faq.id) && (
+                  <div id={`faq-answer-${faq.id}`} className="px-6 pb-6">
+                    <div className="pt-4 border-t border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {filteredFaqs.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">No FAQs found matching your search.</p>
+              <p className="text-gray-500 mt-2">Try adjusting your search terms or category filter.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="section">
+        <div className="container-custom text-center">
+          <h2 className="h2 mb-4">Still Have Questions?</h2>
+          <p className="p max-w-3xl mx-auto mb-8">
+            Can't find the answer you're looking for? Our team is here to help with any questions about flight training.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="tel:+18135551234" className="btn-primary">
+              Call Us: (813) 555-1234
+            </a>
+            <a href="mailto:info@gpapilot.com" className="btn-outline">
+              Email Us
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -1,0 +1,6 @@
+name = "global-pilot-academy"
+compatibility_date = "2024-09-02"
+
+# Environment variables (if needed)
+[vars]
+NODE_VERSION = "18"

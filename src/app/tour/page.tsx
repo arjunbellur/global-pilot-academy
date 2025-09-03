@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, Clock, MapPin, Users, Car, Coffee, Plane, CheckCircle, Phone, Mail } from 'lucide-react'
+import { Calendar, Clock, MapPin, Users, Car, Coffee, Plane, CheckCircle, Phone, Mail, Quote } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Schedule a Campus Tour - Global Pilot Academy',
