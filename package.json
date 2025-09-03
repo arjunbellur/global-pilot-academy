@@ -9,8 +9,8 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "cf:build": "next build",
-    "cf:deploy": "npm run cf:build && wrangler pages deploy ./out",
-    "cf:dev": "wrangler pages dev ./out",
+    "cf:deploy": "npm run cf:build && npx wrangler pages deploy ./out",
+    "cf:dev": "npx wrangler pages dev ./out",
     "cf:preview": "npm run cf:build && npm run cf:dev"
   },
   "dependencies": {
