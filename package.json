@@ -8,9 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "cf:build": "next build",
-    "cf:deploy": "npm run cf:build && npx wrangler pages deploy ./out",
-    "cf:dev": "npx wrangler pages dev ./out",
+    "cf:build": "npx @cloudflare/next-on-pages@1 build",
+    "cf:deploy": "npm run cf:build && npx wrangler pages deploy .vercel/output/static",
+    "cf:dev": "npx wrangler pages dev .vercel/output/static",
     "cf:preview": "npm run cf:build && npm run cf:dev"
   },
   "dependencies": {
