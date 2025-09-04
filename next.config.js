@@ -8,6 +8,10 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   swcMinify: true,
+  // Disable build traces to fix the stack overflow error
+  experimental: {
+    buildTraces: false,
+  },
 }
 
 module.exports = nextConfig
