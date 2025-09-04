@@ -3,6 +3,7 @@ compatibility_date = "2024-09-02"
 
 # Pages configuration for static site deployment
 pages_build_output_dir = ".vercel/output/static"
+pages_build_command = "npx @cloudflare/next-on-pages@1 build"
 
 # Environment variables (if needed)
 [vars]
