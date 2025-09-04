@@ -11,7 +11,8 @@
     "cf:build": "npx @cloudflare/next-on-pages@1 build",
     "cf:deploy": "npm run cf:build && npx wrangler pages deploy .vercel/output/static",
     "cf:dev": "npx wrangler pages dev .vercel/output/static",
-    "cf:preview": "npm run cf:build && npm run cf:dev"
+    "cf:preview": "npm run cf:build && npm run cf:dev",
+    "pages:build": "npx @cloudflare/next-on-pages@1 build"
   },
   "dependencies": {
     "lucide-react": "^0.294.0",
