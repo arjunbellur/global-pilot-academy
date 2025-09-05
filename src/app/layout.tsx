@@ -2,9 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import StickyLeadBar from '@/components/StickyLeadBar'
-import ErrorBoundary from '@/components/ErrorBoundary'
-import { ToastProvider } from '@/components/Toast'
 
 export const metadata: Metadata = {
   title: {
@@ -91,23 +88,18 @@ export default function RootLayout({
         <meta name="theme-color" content="#1c3faa" />
       </head>
       <body className="antialiased">
-        <ErrorBoundary>
-          <ToastProvider>
-            {/* Skip to content link for accessibility */}
-            <a href="#main-content" className="skip-link">
-              Skip to main content
-            </a>
-            
-            <Header />
-            
-            <main id="main-content" className="min-h-screen">
-              {children}
-            </main>
-            
-            <Footer />
-            <StickyLeadBar />
-          </ToastProvider>
-        </ErrorBoundary>
+        {/* Skip to content link for accessibility */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        
+        <Header />
+        
+        <main id="main-content" className="min-h-screen">
+          {children}
+        </main>
+        
+        <Footer />
       </body>
     </html>
   )

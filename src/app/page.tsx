@@ -1,18 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Star, Award, Users, Clock, MapPin, CheckCircle } from 'lucide-react'
-import StickyLeadBar from '@/components/StickyLeadBar'
-import MicroLeadForm from '@/components/MicroLeadForm'
-import MetricsBar from '@/components/MetricsBar'
-import ProgramsGrid from '@/components/ProgramsGrid'
-import FinancingStrip from '@/components/FinancingStrip'
-import TimelineStepper from '@/components/TimelineStepper'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
-import FAQAccordion from '@/components/FAQAccordion'
-import { metrics } from '@/data/metrics'
-import { programs } from '@/data/programs'
-import { testimonials } from '@/data/testimonials'
-import { faqs } from '@/data/faqs'
-import { timelineSteps } from '@/data/timeline'
 
 // Why Global Pilot Academy data
 const whyGPA = [
@@ -40,110 +28,96 @@ const admissions = [
   }
 ]
 
-// Testimonials data is now imported from @/data/testimonials
+// Graduate success data
+const graduateSuccess = [
+  {
+    name: 'Sarah Johnson',
+    role: 'Commercial Pilot',
+    company: 'Southwest Airlines',
+    content: 'Global Pilot Academy gave me the skills and confidence to pursue my dream career. The instructors are exceptional and the training is world-class.',
+    rating: 5,
+    image: '/images/testimonial-1.jpg'
+  },
+  {
+    name: 'Michael Chen',
+    role: 'Flight Instructor',
+    company: 'GPA Alumni',
+    content: 'The structured approach and experienced instructors made all the difference. I went from zero flight experience to CFI in just 14 months.',
+    rating: 5,
+    image: '/images/testimonial-2.jpg'
+  },
+  {
+    name: 'Emily Rodriguez',
+    role: 'Private Pilot',
+    company: 'Recreational Flyer',
+    content: 'Amazing experience learning to fly here. The staff is professional, the aircraft are well-maintained, and the training is comprehensive.',
+    rating: 5,
+    image: '/images/testimonial-3.jpg'
+  }
+]
 
 
 export default function HomePage() {
-  // JSON-LD structured data
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Global Pilot Academy",
-    "url": "https://gpapilot.com",
-    "logo": "https://gpapilot.com/logo.png",
-    "description": "FAA Part 141 & 61 Flight School in Tampa, FL offering structured flight training from Private Pilot to Airline Track",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "6530 Tampa Executive Airport Rd, Suite 111",
-      "addressLocality": "Tampa",
-      "addressRegion": "FL",
-      "postalCode": "33610",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-813-600-4052",
-      "contactType": "customer service",
-      "areaServed": "US",
-      "availableLanguage": ["English", "Spanish"]
-    },
-    "sameAs": [
-      "https://www.facebook.com/gpapilot",
-      "https://www.instagram.com/gpapilot",
-      "https://www.linkedin.com/company/gpapilot"
-    ]
-  };
-
-  const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Organization",
-      "name": "Global Pilot Academy"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Adrian Quichocho"
-    },
-    "reviewBody": "This flight school would work with you and accommodate whatever situation you may have. Since I just recently got out of Active Duty Air Force, my main focus was to fly 5 days a week to get my PPL."
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
   return (
     <>
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FlightSchool",
+            "name": "Global Pilot Academy",
+            "url": "https://www.gpapilot.com",
+            "telephone": "+1-813-600-4052",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "6530 Tampa Executive Airport Rd, Suite 111",
+              "addressLocality": "Tampa",
+              "addressRegion": "FL",
+              "postalCode": "33610",
+              "addressCountry": "US"
+            },
+            "areaServed": "US",
+            "sameAs": [
+              "https://www.instagram.com/",
+              "https://www.facebook.com/"
+            ]
+          })
+        }}
       />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800"></div>
+      <section className="relative py-16 lg:py-24 flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/80 via-primary-800/70 to-accent-800/60"></div>
+          <Image
+            src="/images/hero-bg.jpg"
+            alt="Aircraft flying over Tampa Bay"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 animate-fade-in">
+        <div className="relative z-10 container-custom text-center text-white" style={{ padding: '3em 1.5em' }}>
+          <h1 className="h1 animate-fade-in">
             Become a Pilot in Tampa (KVDF).
           </h1>
-          <p className="text-base md:text-lg max-w-2xl mx-auto text-gray-100 mb-8 animate-slide-up">
+          <p className="p text-lg max-w-3xl mx-auto text-gray-100 animate-slide-up" style={{ marginBottom: '2.5em' }}>
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 animate-slide-up">
-            <Link href="/enroll" className="btn-accent w-full lg:w-auto text-base px-6 py-3">
+          <div className="flex-responsive animate-slide-up" style={{ justifyContent: 'center', gap: '1.5em' }}>
+            <Link href="/enroll" className="btn-accent">
               Enroll
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 w-full lg:w-auto text-base px-6 py-3">
+            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 w-full lg:w-auto text-base px-6 py-3">
+            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Schedule a Tour
             </Link>
           </div>
@@ -157,35 +131,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Micro Lead Form */}
-      <section className="py-8 bg-white">
-        <div className="container-custom">
-          <MicroLeadForm />
-        </div>
-      </section>
-
-      {/* Metrics Bar */}
-      <MetricsBar metrics={metrics} />
-
-      {/* Programs Grid */}
-      <ProgramsGrid programs={programs} />
-
-      {/* Financing Strip */}
-      <FinancingStrip />
-
-      {/* Timeline Stepper */}
-      <TimelineStepper steps={timelineSteps} />
-
       {/* Why Global Pilot Academy Section */}
-      <section className="py-6 lg:py-8 bg-gray-50">
+      <section className="section-sm bg-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid-responsive-sm">
             {whyGPA.map((item, index) => (
-              <div key={index} className="text-center group">
-                <div className="mx-auto bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 mb-2" style={{ width: '2.5em', height: '2.5em' }}>
-                  <item.icon className={`w-5 h-5 ${item.color}`} />
+              <div key={index} className="text-center group stack">
+                <div className="mx-auto bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300" style={{ width: '4em', height: '4em', marginBottom: '1em' }}>
+                  <item.icon className={`w-8 h-8 ${item.color}`} />
                 </div>
-                <p className="text-xs font-medium text-gray-700 leading-relaxed">{item.text}</p>
+                <p className="text-responsive-sm font-medium text-gray-700">{item.text}</p>
               </div>
             ))}
           </div>
@@ -193,62 +148,112 @@ export default function HomePage() {
       </section>
 
       {/* Programs Overview Section */}
-      <section className="py-6 lg:py-8">
+      <section className="section">
         <div className="container-custom">
-          <div className="text-center mb-6">
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Programs Overview</h2>
-            <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <div className="text-center stack">
+            <h2 className="h2">Programs Overview</h2>
+            <p className="p max-w-3xl mx-auto">
               From <strong>Private Pilot</strong> through <strong>Airline Pilot pathways</strong>. Training is personalized to your goals with clear milestones and instructor support.
             </p>
           </div>
 
-          <div className="text-center">
-            <Link href="/programs" className="btn-outline text-sm px-4 py-2">
+          <div className="text-center" style={{ marginTop: '3em' }}>
+            <Link href="/programs" className="btn-outline">
               Explore Programs
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Admissions Preview Section */}
-      <section className="py-6 lg:py-8 bg-gray-50">
+      <section className="section bg-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid-responsive">
             {admissions.map((admission) => (
-              <div key={admission.id} className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 p-4">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{admission.title}</h3>
-                <p className="text-gray-600 mb-3 leading-relaxed text-xs">{admission.description}</p>
-                <Link href={admission.href} className="btn-primary w-full text-center text-sm px-3 py-2">
-                  {admission.cta}
-                  <ArrowRight className="w-3 h-3" />
-                </Link>
+              <div key={admission.id} className="card card-hover">
+                <div className="card-content">
+                  <h3 className="h3">{admission.title}</h3>
+                  <p className="p-sm">{admission.description}</p>
+                  <div style={{ marginTop: '1.5em' }}>
+                    <Link href={admission.href} className="btn-primary w-full text-center">
+                      {admission.cta}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Carousel */}
-      <TestimonialsCarousel testimonials={testimonials} />
+      {/* Graduate Success Section */}
+      <section className="section">
+        <div className="container-custom">
+          <div className="text-center stack">
+            <h2 className="h2">Graduate Success</h2>
+            <p className="p max-w-3xl mx-auto">
+              Real students. Real outcomes. Explore where our alumni are flying today.
+            </p>
+          </div>
 
-      {/* FAQ Accordion */}
-      <FAQAccordion faqs={faqs} />
+          <div className="grid-responsive">
+            {graduateSuccess.map((graduate, index) => (
+              <div key={index} className="card card-hover">
+                <div className="card-content">
+                  <div className="flex items-center" style={{ marginBottom: '1em', gap: '0.125em' }}>
+                    {[...Array(graduate.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <blockquote className="text-gray-700" style={{ marginBottom: '1.5em', fontStyle: 'italic' }}>
+                    "{graduate.content}"
+                  </blockquote>
+                  <div className="flex items-center" style={{ gap: '0.75em' }}>
+                    <div className="bg-gray-200 rounded-full overflow-hidden" style={{ width: '3em', height: '3em', flexShrink: 0 }}>
+                      <Image
+                        src={graduate.image}
+                        alt={`${graduate.name}, ${graduate.role} at ${graduate.company}`}
+                        width={48}
+                        height={48}
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-responsive-sm">{graduate.name}</p>
+                      <p className="text-responsive-sm text-gray-600">{graduate.role}</p>
+                      <p className="text-responsive-sm text-primary-600">{graduate.company}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
 
-      {/* Questions / Contact Section */}
-      <section className="py-6 lg:py-8 bg-gradient-hero text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-xl md:text-2xl font-bold mb-3">Questions?</h2>
-          <p className="text-sm md:text-base max-w-2xl mx-auto text-gray-100 mb-4 leading-relaxed">
-            We're here to help you choose the right starting point and timeline.
-          </p>
-          <div className="flex justify-center mb-4">
-            <Link href="/contact" className="btn-accent text-sm px-4 py-2">
-              Contact Us
-              <ArrowRight className="w-4 h-4" />
+          <div className="text-center" style={{ marginTop: '3em' }}>
+            <Link href="/about/reviews" className="btn-outline">
+              See Success Stories
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
-          <p className="text-xs text-gray-300">
+        </div>
+      </section>
+
+      {/* Questions / Contact Section */}
+      <section className="section-lg bg-gradient-hero text-white">
+        <div className="container-custom text-center stack">
+          <h2 className="h2">Questions?</h2>
+          <p className="p text-responsive-lg max-w-3xl mx-auto text-gray-100">
+            We're here to help you choose the right starting point and timeline.
+          </p>
+          <div className="flex-responsive" style={{ justifyContent: 'center' }}>
+            <Link href="/contact" className="btn-accent">
+              Contact Us
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+          <p className="text-responsive-sm text-gray-300">
             Global Pilot Academy • 6530 Tampa Executive Airport Rd, Suite 111, Tampa, FL 33610<br />
             Phone: (813) 600-4052 • WhatsApp: (813) 428-4423
           </p>
