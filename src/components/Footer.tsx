@@ -30,49 +30,48 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main footer content */}
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          
+      <div className="container-custom section">
+        <div className="grid-responsive">
           {/* Column 1: Contact Information (NAP, WhatsApp) */}
-          <div>
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">GPA</span>
+          <div className="stack">
+            <div className="flex items-center" style={{ gap: '0.75em', marginBottom: '1.5em' }}>
+              <div className="bg-primary-500 rounded-lg flex items-center justify-center" style={{ width: '2.5em', height: '2.5em' }}>
+                <span className="text-white font-bold text-responsive">GPA</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Global Pilot Academy</h3>
-                <p className="text-sm text-gray-400">Flight School at Tampa Executive Airport (KVDF)</p>
+                <h3 className="text-responsive-lg font-bold text-white">Global Pilot Academy</h3>
+                <p className="text-responsive-sm text-gray-400">Flight School at Tampa Executive Airport (KVDF)</p>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-accent-400 mt-0.5 flex-shrink-0" />
+            <div className="stack-lg">
+              <div className="flex items-start" style={{ gap: '0.75em' }}>
+                <MapPin className="w-5 h-5 text-accent-400 flex-shrink-0" style={{ marginTop: '0.125em' }} />
                 <div>
-                  <p className="font-medium">Tampa Executive Airport (KVDF)</p>
-                  <p className="text-gray-400 text-sm">Tampa, FL 33619</p>
+                  <p className="font-medium text-white">Tampa Executive Airport (KVDF)</p>
+                  <p className="text-gray-400 text-responsive-sm">Tampa, FL 33619</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center" style={{ gap: '0.75em' }}>
                 <Phone className="w-5 h-5 text-accent-400" />
-                <a href="tel:+18135551234" className="hover:text-accent-400 transition-colors">
+                <a href="tel:+18135551234" className="hover:text-accent-400 transition-colors duration-300 text-white">
                   (813) 555-1234
                 </a>
               </div>
 
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center" style={{ gap: '0.75em' }}>
                 <Mail className="w-5 h-5 text-accent-400" />
-                <a href="mailto:info@gpapilot.com" className="hover:text-accent-400 transition-colors">
+                <a href="mailto:info@gpapilot.com" className="hover:text-accent-400 transition-colors duration-300 text-white">
                   info@gpapilot.com
                 </a>
               </div>
 
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center" style={{ gap: '0.75em' }}>
                 <Phone className="w-5 h-5 text-accent-400" />
                 <div>
-                  <p className="font-medium">WhatsApp</p>
-                  <a href="https://wa.me/18135551234" className="text-accent-400 hover:text-white transition-colors text-sm">
+                  <p className="font-medium text-white">WhatsApp</p>
+                  <a href="https://wa.me/18135551234" className="text-accent-400 hover:text-white transition-colors duration-300 text-responsive-sm">
                     +1 (813) 555-1234
                   </a>
                 </div>
@@ -81,14 +80,14 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <div className="grid grid-cols-2 gap-4">
+          <div className="stack">
+            <h3 className="text-responsive-lg font-semibold text-white" style={{ marginBottom: '1.5em' }}>Quick Links</h3>
+            <div className="grid grid-cols-2" style={{ gap: '1em' }}>
               {quickLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white transition-colors duration-300 text-responsive-sm"
                 >
                   {link.name}
                 </Link>
@@ -97,14 +96,14 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Get Started CTAs */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Get Started</h3>
-            <div className="space-y-4">
+          <div className="stack">
+            <h3 className="text-responsive-lg font-semibold text-white" style={{ marginBottom: '1.5em' }}>Get Started</h3>
+            <div className="stack">
               {getStartedLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`block w-full text-center ${
+                  className={`w-full text-center ${
                     link.primary
                       ? 'btn-accent'
                       : 'btn-outline border-white text-white hover:bg-white hover:text-gray-900'
@@ -116,14 +115,15 @@ export default function Footer() {
             </div>
 
             {/* Social Media */}
-            <div className="mt-8">
-              <h4 className="text-sm font-semibold text-gray-400 mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
+            <div className="stack" style={{ marginTop: '2em' }}>
+              <h4 className="text-responsive-sm font-semibold text-gray-400" style={{ marginBottom: '1em' }}>Follow Us</h4>
+              <div className="flex cluster-sm">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
-                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-200"
+                    className="bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-300"
+                    style={{ width: '2.5em', height: '2.5em' }}
                     aria-label={social.name}
                   >
                     <social.icon className="w-5 h-5" />
@@ -137,19 +137,19 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-gray-800">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">
+        <div className="container-custom" style={{ padding: '1.5em 0' }}>
+          <div className="flex-responsive-col">
+            <div className="text-responsive-sm text-gray-400">
               <p>&copy; {new Date().getFullYear()} Global Pilot Academy. All rights reserved.</p>
             </div>
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <Link href="/privacy" className="hover:text-white transition-colors">
+            <div className="flex cluster text-responsive-sm text-gray-400">
+              <Link href="/privacy" className="hover:text-white transition-colors duration-300">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms" className="hover:text-white transition-colors duration-300">
                 Terms of Service
               </Link>
-              <Link href="/sitemap" className="hover:text-white transition-colors">
+              <Link href="/sitemap" className="hover:text-white transition-colors duration-300">
                 Sitemap
               </Link>
             </div>
