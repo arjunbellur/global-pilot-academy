@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="bg-primary-500 rounded-lg w-10 h-10 flex items-center justify-center">
+            <div className="bg-gray-900 rounded-lg w-10 h-10 flex items-center justify-center">
               <span className="text-white font-bold text-sm">GPA</span>
             </div>
             <div className="hidden sm:block ml-3">

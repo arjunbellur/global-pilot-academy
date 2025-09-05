@@ -252,10 +252,6 @@
   }
 
   /* Navigation */
-  .nav-link {
-    @apply text-sm font-medium text-gray-700 hover:text-primary-500 transition-colors duration-200;
-  }
-  
   .nav-link-active {
     @apply text-primary-500;
   }
