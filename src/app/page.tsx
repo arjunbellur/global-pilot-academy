@@ -87,27 +87,27 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-8">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8" style={{ height: '120vh' }}>
         {/* Background Gradient */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800"></div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container text-center text-white px-4">
-          <h1 className="text-display mb-4">
+        <div className="relative z-10 container text-center text-white px-4 max-w-4xl">
+          <h1 className="text-display mb-6 leading-tight">
             Become a Pilot in Tampa (KVDF).
           </h1>
-          <p className="text-body max-w-2xl mx-auto mb-6">
+          <p className="text-body max-w-3xl mx-auto mb-8 text-lg leading-relaxed">
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center space-x-inline">
-            <Link href="/enroll" className="btn btn-md btn-primary">
-              Enroll
-              <ArrowRight className="icon-md" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <Link href="/enroll" className="btn btn-lg btn-primary px-8 py-4">
+              Enroll Now
+              <ArrowRight className="icon-md ml-2" />
             </Link>
-            <Link href="/discovery" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/discovery" className="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/tour" className="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4">
               Schedule Tour
             </Link>
           </div>
