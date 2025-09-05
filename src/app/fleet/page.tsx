@@ -442,7 +442,7 @@ export default function FleetPage() {
             <a href="tel:+18135551234" className="btn-primary text-lg px-8 py-4">
               Call to Book
             </a>
-            <a href="/contact" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-gray-900">
+            <a href="/contact" className="btn btn-md btn-outline-white">
               Contact Us
             </a>
           </div>

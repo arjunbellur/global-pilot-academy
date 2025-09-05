@@ -118,7 +118,7 @@ export default function EnrollPage() {
               Domestic Student
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
-            <Link href="#international-enrollment" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-accent-900">
+            <Link href="#international-enrollment" className="btn btn-md btn-outline-white">
               International Student
             </Link>
           </div>
@@ -437,7 +437,7 @@ export default function EnrollPage() {
             <a href="tel:+18135551234" className="btn-accent text-lg px-8 py-4">
               Call (813) 555-1234
             </a>
-            <a href="mailto:enrollment@gpapilot.com" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary-900">
+            <a href="mailto:enrollment@gpapilot.com" className="btn btn-md btn-outline-white">
               Email Enrollment Team
             </a>
           </div>

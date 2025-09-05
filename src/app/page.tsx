@@ -113,10 +113,10 @@ export default function HomePage() {
               Enroll Now
               <ArrowRight className="icon-sm ml-2" />
             </Link>
-            <Link href="/discovery" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/discovery" className="btn btn-md btn-outline btn-outline-white">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/tour" className="btn btn-md btn-outline btn-outline-white">
               Schedule Tour
             </Link>
           </div>

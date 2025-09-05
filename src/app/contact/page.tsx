@@ -356,7 +356,7 @@ export default function ContactPage() {
             <a href="/discovery" className="btn-accent text-lg px-8 py-4">
               Book Discovery Flight
             </a>
-            <a href="/tour" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary-900">
+            <a href="/tour" className="btn btn-md btn-outline-white">
               Schedule Campus Tour
             </a>
             <a href="/enroll" className="btn-primary text-lg px-8 py-4">

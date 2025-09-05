@@ -125,7 +125,14 @@ const config: Config = {
         'xl': 'var(--shadow-xl)',
         '2xl': 'var(--shadow-2xl)',
         'primary': 'var(--shadow-primary)',
+        'primary-hover': 'var(--shadow-primary-hover)',
         'accent': 'var(--shadow-accent)',
+        'accent-hover': 'var(--shadow-accent-hover)',
+        'button': 'var(--shadow-button)',
+        'button-hover': 'var(--shadow-button-hover)',
+        'button-active': 'var(--shadow-button-active)',
+        'card': 'var(--shadow-card)',
+        'card-hover': 'var(--shadow-card-hover)',
       },
       
       // Animation & Transitions
@@ -139,6 +146,8 @@ const config: Config = {
         'ease': 'var(--ease-in-out)',
         'ease-in': 'var(--ease-in)',
         'ease-out': 'var(--ease-out)',
+        'smooth': 'var(--ease-smooth)',
+        'bounce': 'var(--ease-bounce)',
       },
       
       // Container Configuration

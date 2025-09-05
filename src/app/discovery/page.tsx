@@ -406,7 +406,7 @@ export default function DiscoveryFlightPage() {
             <a href="#booking-form" className="btn-primary text-lg px-8 py-4">
               Book Now - $99
             </a>
-            <a href="tel:+18135551234" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-accent-900">
+            <a href="tel:+18135551234" className="btn btn-md btn-outline-white">
               Call to Book
             </a>
           </div>

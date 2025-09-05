@@ -459,7 +459,7 @@ export default function TourPage() {
             <Link href="#booking-form" className="btn-primary text-lg px-8 py-4">
               Book Your Tour
             </Link>
-            <Link href="/discovery" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-accent-900">
+            <Link href="/discovery" className="btn btn-md btn-outline-white">
               Try Discovery Flight
             </Link>
           </div>

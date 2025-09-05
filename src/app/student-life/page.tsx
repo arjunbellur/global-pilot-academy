@@ -419,7 +419,7 @@ export default function StudentLifePage() {
             <Link href="/enroll" className="btn-primary text-lg px-8 py-4">
               Start Your Journey
             </Link>
-            <Link href="/contact" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-accent-900">
+            <Link href="/contact" className="btn btn-md btn-outline-white">
               Learn More
             </Link>
           </div>

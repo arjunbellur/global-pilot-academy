@@ -231,7 +231,7 @@ export default function PortalPage() {
             <Link href="/discovery" className="btn-primary text-lg px-8 py-4">
               Book Discovery Flight
             </Link>
-            <Link href="/enroll" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-accent-900">
+            <Link href="/enroll" className="btn btn-md btn-outline-white">
               Enroll Now
             </Link>
           </div>
