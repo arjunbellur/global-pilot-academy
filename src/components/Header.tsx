@@ -67,7 +67,8 @@ export default function Header() {
                 {/* Dropdown */}
                 {item.children && dropdownOpen === item.label && (
                   <div
-                    className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50"
+                    className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2"
+                    style={{ zIndex: 1000 }}
                     onMouseEnter={() => setDropdownOpen(item.label)}
                     onMouseLeave={() => setDropdownOpen(null)}
                   >
