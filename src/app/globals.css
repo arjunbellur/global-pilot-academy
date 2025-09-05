@@ -2,12 +2,11 @@
 /* Import design tokens first */
 @import '../styles/design-tokens.css';
 
-/* stylelint-disable-next-line at-rule-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
-/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
-/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
 
 @layer base {
   html {
@@ -47,6 +46,7 @@
   }
 }
 
+/* stylelint-disable at-rule-no-unknown */
 @layer components {
   /* ========================================
      STANDARDIZED COMPONENT SYSTEM
@@ -671,6 +671,7 @@
     font-size: var(--font-size-lg);
   }
 }
+/* stylelint-enable at-rule-no-unknown */
 
 @layer utilities {
   .text-balance {
