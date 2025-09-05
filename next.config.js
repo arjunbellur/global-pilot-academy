@@ -13,7 +13,6 @@ const nextConfig = {
   // Disable build optimization to prevent stack overflow
   experimental: {
     // Use minimal experimental features
-    optimizePackageImports: false,
     webpackBuildWorker: false,
   },
 }
