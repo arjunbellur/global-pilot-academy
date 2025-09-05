@@ -64,18 +64,18 @@ export default function Header() {
                 href="tel:+18135551234"
                 className="flex items-center hover:text-accent-300 transition-colors duration-300"
               >
-                <Phone className="w-4 h-4 mr-1" />
-                <span className="text-sm">(813) 555-1234</span>
+                <Phone className="w-3 h-3 mr-1" />
+                <span className="text-xs">(813) 555-1234</span>
               </a>
               <a
                 href="mailto:info@gpapilot.com"
                 className="flex items-center hover:text-accent-300 transition-colors duration-300"
               >
-                <Mail className="w-4 h-4 mr-1" />
-                <span className="text-sm">info@gpapilot.com</span>
+                <Mail className="w-3 h-3 mr-1" />
+                <span className="text-xs">info@gpapilot.com</span>
               </a>
             </div>
-            <div className="hidden md:flex items-center space-x-2 text-sm">
+            <div className="hidden md:flex items-center space-x-2 text-xs">
               <span>KVDF Airport, Tampa, FL</span>
               <span>•</span>
               <span>FAA Part 141 & 61</span>
@@ -99,15 +99,15 @@ export default function Header() {
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`font-medium relative group transition-colors duration-300 ${
+                className={`text-sm font-medium relative group transition-colors duration-300 ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary-500' 
-                    : 'text-white hover:text-accent-300'
+                    : 'text-white hover:text-accent-300 drop-shadow-sm'
                 }`}
               >
                 {item.name}
