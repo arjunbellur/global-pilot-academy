@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useCallback, useMemo } from 'react'
-import { ChevronDown, ChevronUp, Search, Filter } from 'lucide-react'
+import { ChevronDown, ChevronUp, Search } from 'lucide-react'
 
 const faqCategories = [
   'All',
@@ -182,17 +182,17 @@ export default function FAQClient() {
 
       {/* Search and Filter */}
       <section className="section">
-        <div className="container-custom">
+        <div className="container">
           <div className="max-w-4xl mx-auto">
             {/* Search Bar */}
             <div className="relative mb-8">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 icon-md" />
               <input
                 type="text"
                 placeholder="Search FAQs..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                className="form-input pl-10"
               />
             </div>
 
@@ -202,10 +202,10 @@ export default function FAQClient() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  className={`btn btn-sm ${
                     selectedCategory === category
-                      ? 'bg-primary-500 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'btn-primary'
+                      : 'btn-ghost'
                   }`}
                 >
                   {category}
@@ -215,7 +215,7 @@ export default function FAQClient() {
 
             {/* Results Count */}
             <div className="text-center mb-8">
-              <p className="text-gray-600">
+              <p className="text-body">
                 Showing {filteredFaqs.length} of {faqs.length} FAQs
                 {selectedCategory !== 'All' && ` in ${selectedCategory}`}
               </p>
@@ -226,8 +226,8 @@ export default function FAQClient() {
 
       {/* FAQ List */}
       <section className="section-sm bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto space-y-4">
+        <div className="container">
+          <div className="max-w-4xl mx-auto space-y-stack">
             {filteredFaqs.map((faq) => (
               <div key={faq.id} className="card">
                 <button
@@ -237,20 +237,20 @@ export default function FAQClient() {
                   aria-controls={`faq-answer-${faq.id}`}
                 >
                   <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <span className="px-2 py-1 bg-primary-100 text-primary-700 rounded text-xs font-medium">
+                    <div className="flex items-center space-x-inline mb-2">
+                      <span className="badge badge-primary">
                         {faq.category}
                       </span>
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-subheading">
                       {faq.question}
                     </h3>
                   </div>
                   <div className="ml-4 flex-shrink-0">
                     {expandedItems.includes(faq.id) ? (
-                      <ChevronUp className="w-5 h-5 text-gray-400" />
+                      <ChevronUp className="icon-lg text-gray-400" />
                     ) : (
-                      <ChevronDown className="w-5 h-5 text-gray-400" />
+                      <ChevronDown className="icon-lg text-gray-400" />
                     )}
                   </div>
                 </button>
@@ -258,7 +258,7 @@ export default function FAQClient() {
                 {expandedItems.includes(faq.id) && (
                   <div id={`faq-answer-${faq.id}`} className="px-6 pb-6">
                     <div className="pt-4 border-t border-gray-200">
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-body">
                         {faq.answer}
                       </p>
                     </div>
@@ -270,8 +270,8 @@ export default function FAQClient() {
 
           {filteredFaqs.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">No FAQs found matching your search.</p>
-              <p className="text-gray-500 mt-2">Try adjusting your search terms or category filter.</p>
+              <p className="text-body">No FAQs found matching your search.</p>
+              <p className="text-caption mt-2">Try adjusting your search terms or category filter.</p>
             </div>
           )}
         </div>
@@ -279,16 +279,16 @@ export default function FAQClient() {
 
       {/* Contact Section */}
       <section className="section">
-        <div className="container-custom text-center">
-          <h2 className="h2 mb-4">Still Have Questions?</h2>
-          <p className="p max-w-3xl mx-auto mb-8">
+        <div className="container text-center">
+          <h2 className="text-heading mb-4">Still Have Questions?</h2>
+          <p className="text-body max-w-3xl mx-auto mb-8">
             Can't find the answer you're looking for? Our team is here to help with any questions about flight training.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="tel:+18135551234" className="btn-primary">
+            <a href="tel:+18135551234" className="btn btn-md btn-primary">
               Call Us: (813) 555-1234
             </a>
-            <a href="mailto:info@gpapilot.com" className="btn-outline">
+            <a href="mailto:info@gpapilot.com" className="btn btn-md btn-outline">
               Email Us
             </a>
           </div>

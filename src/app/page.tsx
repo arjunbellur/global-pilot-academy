@@ -56,7 +56,6 @@ const graduateSuccess = [
   }
 ]
 
-
 export default function HomePage() {
   return (
     <>
@@ -93,22 +92,22 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800"></div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-4 animate-fade-in">
+        <div className="relative z-10 container text-center text-white px-4">
+          <h1 className="text-display mb-4">
             Become a Pilot in Tampa (KVDF).
           </h1>
-          <p className="text-sm md:text-base max-w-2xl mx-auto text-white mb-6 animate-slide-up">
+          <p className="text-body max-w-2xl mx-auto text-white mb-6">
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-slide-up">
-            <Link href="/enroll" className="btn-primary text-sm px-4 py-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-x-inline">
+            <Link href="/enroll" className="btn btn-md btn-primary">
               Enroll
-              <ArrowRight className="w-3 h-3" />
+              <ArrowRight className="icon-md" />
             </Link>
-            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-sm px-4 py-2">
+            <Link href="/discovery" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-sm px-4 py-2">
+            <Link href="/tour" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Schedule Tour
             </Link>
           </div>
@@ -124,14 +123,14 @@ export default function HomePage() {
 
       {/* Why Global Pilot Academy Section */}
       <section className="section-sm bg-gray-50">
-        <div className="container-custom">
-          <div className="grid-responsive-sm">
+        <div className="container">
+          <div className="grid-4">
             {whyGPA.map((item, index) => (
-              <div key={index} className="text-center group stack">
-                <div className="mx-auto bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300" style={{ width: '4em', height: '4em', marginBottom: '1em' }}>
-                  <item.icon className={`w-8 h-8 ${item.color}`} />
+              <div key={index} className="text-center space-y-stack">
+                <div className="mx-auto bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+                  <item.icon className={`icon-xl ${item.color}`} />
                 </div>
-                <p className="text-responsive-sm font-medium text-gray-700">{item.text}</p>
+                <p className="text-body font-medium">{item.text}</p>
               </div>
             ))}
           </div>
@@ -140,18 +139,18 @@ export default function HomePage() {
 
       {/* Programs Overview Section */}
       <section className="section">
-        <div className="container-custom">
-          <div className="text-center stack">
-            <h2 className="h2">Programs Overview</h2>
-            <p className="p max-w-3xl mx-auto">
+        <div className="container">
+          <div className="text-center space-y-stack">
+            <h2 className="text-heading">Programs Overview</h2>
+            <p className="text-body max-w-3xl mx-auto">
               From <strong>Private Pilot</strong> through <strong>Airline Pilot pathways</strong>. Training is personalized to your goals with clear milestones and instructor support.
             </p>
           </div>
 
-          <div className="text-center" style={{ marginTop: '3em' }}>
-            <Link href="/programs" className="btn-outline">
+          <div className="text-center mt-8">
+            <Link href="/programs" className="btn btn-md btn-outline">
               Explore Programs
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="icon-md" />
             </Link>
           </div>
         </div>
@@ -159,19 +158,17 @@ export default function HomePage() {
 
       {/* Admissions Preview Section */}
       <section className="section bg-gray-50">
-        <div className="container-custom">
-          <div className="grid-responsive">
+        <div className="container">
+          <div className="grid-2">
             {admissions.map((admission) => (
-              <div key={admission.id} className="card card-hover">
-                <div className="card-content">
-                  <h3 className="h3">{admission.title}</h3>
-                  <p className="p-sm">{admission.description}</p>
-                  <div style={{ marginTop: '1.5em' }}>
-                    <Link href={admission.href} className="btn-primary w-full text-center">
-                      {admission.cta}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
+              <div key={admission.id} className="card">
+                <div className="card-body space-y-stack">
+                  <h3 className="text-subheading">{admission.title}</h3>
+                  <p className="text-body">{admission.description}</p>
+                  <Link href={admission.href} className="btn btn-md btn-primary w-full text-center">
+                    {admission.cta}
+                    <ArrowRight className="icon-md" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -181,28 +178,28 @@ export default function HomePage() {
 
       {/* Graduate Success Section */}
       <section className="section">
-        <div className="container-custom">
-          <div className="text-center stack">
-            <h2 className="h2">Graduate Success</h2>
-            <p className="p max-w-3xl mx-auto">
+        <div className="container">
+          <div className="text-center space-y-stack">
+            <h2 className="text-heading">Graduate Success</h2>
+            <p className="text-body max-w-3xl mx-auto">
               Real students. Real outcomes. Explore where our alumni are flying today.
             </p>
           </div>
 
-          <div className="grid-responsive">
+          <div className="grid-3 mt-12">
             {graduateSuccess.map((graduate, index) => (
-              <div key={index} className="card card-hover">
-                <div className="card-content">
-                  <div className="flex items-center" style={{ marginBottom: '1em', gap: '0.125em' }}>
+              <div key={index} className="card">
+                <div className="card-body space-y-stack">
+                  <div className="flex items-center space-x-inline-sm">
                     {[...Array(graduate.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="icon-lg text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <blockquote className="text-gray-700" style={{ marginBottom: '1.5em', fontStyle: 'italic' }}>
+                  <blockquote className="text-body italic">
                     "{graduate.content}"
                   </blockquote>
-                  <div className="flex items-center" style={{ gap: '0.75em' }}>
-                    <div className="bg-gray-200 rounded-full overflow-hidden" style={{ width: '3em', height: '3em', flexShrink: 0 }}>
+                  <div className="flex items-center space-x-inline">
+                    <div className="bg-gray-200 rounded-full w-12 h-12 overflow-hidden flex-shrink-0">
                       <Image
                         src={graduate.image}
                         alt={`${graduate.name}, ${graduate.role} at ${graduate.company}`}
@@ -212,9 +209,9 @@ export default function HomePage() {
                       />
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900 text-responsive-sm">{graduate.name}</p>
-                      <p className="text-responsive-sm text-gray-600">{graduate.role}</p>
-                      <p className="text-responsive-sm text-primary-600">{graduate.company}</p>
+                      <p className="text-body font-semibold text-gray-900">{graduate.name}</p>
+                      <p className="text-caption text-gray-600">{graduate.role}</p>
+                      <p className="text-caption text-primary-600">{graduate.company}</p>
                     </div>
                   </div>
                 </div>
@@ -222,29 +219,29 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="text-center" style={{ marginTop: '3em' }}>
-            <Link href="/about/reviews" className="btn-outline">
+          <div className="text-center mt-12">
+            <Link href="/about/reviews" className="btn btn-md btn-outline">
               See Success Stories
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="icon-md" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Questions / Contact Section */}
-      <section className="section-lg bg-gradient-hero text-white">
-        <div className="container-custom text-center stack">
-          <h2 className="h2">Questions?</h2>
-          <p className="p text-responsive-lg max-w-3xl mx-auto text-gray-100">
+      <section className="section-lg bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800 text-white">
+        <div className="container text-center space-y-stack">
+          <h2 className="text-heading">Questions?</h2>
+          <p className="text-body max-w-3xl mx-auto text-gray-100">
             We're here to help you choose the right starting point and timeline.
           </p>
-          <div className="flex-responsive" style={{ justifyContent: 'center' }}>
-            <Link href="/contact" className="btn-accent">
+          <div className="flex justify-center">
+            <Link href="/contact" className="btn btn-md btn-primary">
               Contact Us
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="icon-md" />
             </Link>
           </div>
-          <p className="text-responsive-sm text-gray-300">
+          <p className="text-caption text-gray-300">
             Global Pilot Academy • 6530 Tampa Executive Airport Rd, Suite 111, Tampa, FL 33610<br />
             Phone: (813) 600-4052 • WhatsApp: (813) 428-4423
           </p>
