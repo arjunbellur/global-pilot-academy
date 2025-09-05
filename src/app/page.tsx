@@ -88,7 +88,7 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Gradient */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800"></div>
 

@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 
-// Header navigation (Tier 1)
+// Navigation items
 const navigation = [
   { name: 'Programs', href: '/programs' },
   { name: 'Pricing', href: '/pricing' },
@@ -13,69 +13,26 @@ const navigation = [
   { name: 'FAQ', href: '/faq' },
 ]
 
-// Footer navigation (for mobile dropdown)
-const fullNavigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Programs', href: '/programs' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Fleet', href: '/fleet' },
-  { name: 'Enroll', href: '/enroll' },
-  { name: 'Student Life', href: '/student-life' },
-  { name: 'About', href: '/about' },
-  { name: 'Discovery Flight', href: '/discovery' },
-  { name: 'Tour', href: '/tour' },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'Contact', href: '/contact' },
-]
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  const handleScroll = useCallback(() => {
-    setIsScrolled(window.scrollY > 10)
-  }, [])
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll])
-
-  const toggleMobileMenu = useCallback(() => {
-    setMobileMenuOpen(prev => !prev)
-  }, [])
-
-  const closeMobileMenu = useCallback(() => {
-    setMobileMenuOpen(false)
-  }, [])
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
-        : 'bg-transparent'
-    }`}>
-      {/* Top bar with contact info */}
-      <div className="bg-primary-600 text-white py-2">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
+      {/* Top contact bar */}
+      <div className="bg-primary-600 text-white py-1">
         <div className="container-custom">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between text-xs">
             <div className="flex items-center space-x-4">
-              <a
-                href="tel:+18135551234"
-                className="flex items-center hover:text-accent-300 transition-colors duration-300"
-              >
+              <a href="tel:+18135551234" className="flex items-center hover:text-accent-300">
                 <Phone className="w-3 h-3 mr-1" />
-                <span className="text-xs">(813) 555-1234</span>
+                (813) 555-1234
               </a>
-              <a
-                href="mailto:info@gpapilot.com"
-                className="flex items-center hover:text-accent-300 transition-colors duration-300"
-              >
+              <a href="mailto:info@gpapilot.com" className="flex items-center hover:text-accent-300">
                 <Mail className="w-3 h-3 mr-1" />
-                <span className="text-xs">info@gpapilot.com</span>
+                info@gpapilot.com
               </a>
             </div>
-            <div className="hidden md:flex items-center space-x-2 text-xs">
+            <div className="hidden md:flex items-center space-x-2">
               <span>KVDF Airport, Tampa, FL</span>
               <span>•</span>
               <span>FAA Part 141 & 61</span>
@@ -85,45 +42,38 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className={`container-custom py-4 ${isScrolled ? 'bg-white' : 'bg-transparent'}`} role="navigation" aria-label="Main navigation">
+      <nav className="container-custom py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group" aria-label="Global Pilot Academy Home">
-            <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 w-10 h-10">
+          <Link href="/" className="flex items-center">
+            <div className="bg-primary-500 rounded-lg w-10 h-10 flex items-center justify-center">
               <span className="text-white font-bold text-sm">GPA</span>
             </div>
             <div className="hidden sm:block ml-3">
-              <h1 className={`text-lg font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Global Pilot Academy</h1>
-              <p className={`text-xs ${isScrolled ? 'text-gray-700' : 'text-gray-200'}`}>Professional Flight Training</p>
+              <h1 className="text-lg font-bold text-gray-900">Global Pilot Academy</h1>
+              <p className="text-xs text-gray-600">Professional Flight Training</p>
             </div>
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium relative group transition-colors duration-300 ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-primary-500' 
-                    : 'text-white hover:text-accent-300 drop-shadow-lg bg-black/20 px-2 py-1 rounded'
-                }`}
+                className="text-sm font-medium text-gray-700 hover:text-primary-500 transition-colors"
               >
                 {item.name}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
-                  isScrolled ? 'bg-primary-500' : 'bg-accent-300'
-                }`}></span>
               </Link>
             ))}
           </div>
 
-          {/* Sticky CTAs */}
+          {/* CTA buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-xs px-3 py-1.5">
+            <Link href="/discovery" className="btn-outline text-xs px-3 py-1.5">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-xs px-3 py-1.5">
+            <Link href="/tour" className="btn-outline text-xs px-3 py-1.5">
               Schedule Tour
             </Link>
           </div>
@@ -131,51 +81,39 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className={`lg:hidden rounded-md transition-colors duration-300 p-2 ${
-              isScrolled 
-                ? 'text-gray-700 hover:text-primary-500 hover:bg-gray-100' 
-                : 'text-white hover:text-accent-300 hover:bg-white/10'
-            }`}
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
+            className="lg:hidden p-2 text-gray-700 hover:text-primary-500"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile navigation */}
+        {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg" style={{ marginTop: '0.75em', paddingBottom: '0.75em' }}>
-            <div className="stack" style={{ paddingTop: '0.75em' }}>
-              {fullNavigation.map((item) => (
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
+            <div className="pt-4 space-y-2">
+              {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-sm font-medium text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors duration-300"
-                  style={{ padding: '0.5em 0.75em' }}
-                  onClick={closeMobileMenu}
+                  className="block text-sm font-medium text-gray-700 hover:text-primary-500 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="border-t border-gray-200 stack" style={{ paddingTop: '0.75em' }}>
+              <div className="pt-4 space-y-2">
                 <Link
                   href="/discovery"
-                  className="btn-primary text-center text-xs px-3 py-1.5"
-                  style={{ margin: '0 0.75em' }}
-                  onClick={closeMobileMenu}
+                  className="btn-primary text-xs px-3 py-1.5 w-full text-center"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Book Discovery Flight
                 </Link>
                 <Link
                   href="/tour"
-                  className="btn-outline text-center text-xs px-3 py-1.5"
-                  style={{ margin: '0 0.75em' }}
-                  onClick={closeMobileMenu}
+                  className="btn-outline text-xs px-3 py-1.5 w-full text-center"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Schedule Tour
                 </Link>
