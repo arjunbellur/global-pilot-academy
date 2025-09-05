@@ -120,7 +120,16 @@ export default function ProgramsPage() {
     <>
       {/* Hero Section */}
       <section className="relative py-16 lg:py-20 bg-white">
-        <div className="container-custom text-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Pilot in cockpit with aviation controls"
+            fill
+            className="object-cover opacity-20"
+          />
+        </div>
+        <div className="container-custom text-center relative z-10">
           <h1 className="h1 mb-4">Flight Training Programs</h1>
           <p className="p text-lg max-w-3xl mx-auto text-gray-700">
             Choose the perfect flight training program for your aviation goals. From your first flight 

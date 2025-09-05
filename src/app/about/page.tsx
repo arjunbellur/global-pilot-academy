@@ -128,7 +128,16 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <section className="relative py-16 lg:py-20 bg-white">
-        <div className="container-custom text-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+            alt="Pilot in uniform with aircraft"
+            fill
+            className="object-cover opacity-20"
+          />
+        </div>
+        <div className="container-custom text-center relative z-10">
           <h1 className="h1 mb-4">About Global Pilot Academy</h1>
           <p className="p text-lg max-w-3xl mx-auto text-gray-700">
             FAA Part 141 & 61 certified flight school committed to excellence in aviation education
