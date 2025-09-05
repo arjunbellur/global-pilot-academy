@@ -572,23 +572,6 @@
     gap: var(--space-xl);
   }
 
-  /* Accessibility - Skip to content link */
-  .skip-link {
-    position: absolute;
-    top: -2.5em;
-    left: var(--space-lg);
-    background-color: var(--color-primary-500);
-    color: white;
-    border-radius: var(--radius-md);
-    z-index: var(--z-tooltip);
-    transition: all var(--duration-fast) var(--ease-in-out);
-    padding: var(--space-sm) var(--space-md);
-    text-decoration: none;
-  }
-
-  .skip-link:focus {
-    top: var(--space-lg);
-  }
 
   /* Standardized Navigation System using Design Tokens */
   .nav-link {
