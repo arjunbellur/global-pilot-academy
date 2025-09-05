@@ -89,10 +89,10 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative flex items-center justify-center overflow-hidden" style={{ height: 'calc(80vh - 4rem)' }}>
         {/* Background Gradient */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800"></div>
+        <div className="absolute inset-0 z-0 bg-white"></div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container text-center text-white px-4 max-w-4xl">
+        <div className="relative z-10 container text-center text-gray-900 px-4 max-w-4xl">
           <h1 className="text-hero mb-4 leading-tight">
             Become a Pilot in Tampa (KVDF).
           </h1>
@@ -104,10 +104,10 @@ export default function HomePage() {
               Enroll Now
               <ArrowRight className="icon-sm ml-2" />
             </Link>
-            <Link href="/discovery" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/discovery" className="btn btn-md btn-outline">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/tour" className="btn btn-md btn-outline">
               Schedule Tour
             </Link>
           </div>
@@ -115,8 +115,8 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
@@ -229,7 +229,7 @@ export default function HomePage() {
       </section>
 
       {/* Questions / Contact Section */}
-      <section className="section-lg bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800 text-white">
+      <section className="section-lg bg-white">
         <div className="container text-center space-y-stack">
           <h2 className="text-heading">Questions?</h2>
           <p className="text-body max-w-3xl mx-auto">

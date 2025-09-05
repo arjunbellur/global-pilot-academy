@@ -127,10 +127,10 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <section className="relative py-16 lg:py-20 bg-white">
         <div className="container-custom text-center">
           <h1 className="h1 mb-4">About Global Pilot Academy</h1>
-          <p className="p text-lg max-w-3xl mx-auto text-gray-100">
+          <p className="p text-lg max-w-3xl mx-auto text-gray-700">
             FAA Part 141 & 61 certified flight school committed to excellence in aviation education
             and pilot training at Tampa Executive Airport.
           </p>
@@ -353,10 +353,10 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-lg bg-gradient-accent text-white">
+      <section className="section-lg bg-white">
         <div className="container-custom text-center">
           <h2 className="h2 mb-6">Join Our Aviation Family</h2>
-          <p className="p text-xl mb-8 max-w-3xl mx-auto text-gray-100">
+          <p className="p text-xl mb-8 max-w-3xl mx-auto text-gray-700">
             Experience world-class flight training with experienced instructors and modern facilities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

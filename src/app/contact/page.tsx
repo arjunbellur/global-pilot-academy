@@ -130,10 +130,10 @@ export default function ContactPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <section className="relative py-16 lg:py-20 bg-white">
         <div className="container-custom text-center">
           <h1 className="h1 mb-4">Contact Us</h1>
-          <p className="p text-lg max-w-3xl mx-auto text-gray-100">
+          <p className="p text-lg max-w-3xl mx-auto text-gray-700">
             Ready to start your aviation journey? Get in touch with our team today.
           </p>
         </div>

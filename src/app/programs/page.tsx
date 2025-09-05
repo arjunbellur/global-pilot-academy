@@ -119,10 +119,10 @@ export default function ProgramsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <section className="relative py-16 lg:py-20 bg-white">
         <div className="container-custom text-center">
           <h1 className="h1 mb-4">Flight Training Programs</h1>
-          <p className="p text-lg max-w-3xl mx-auto text-gray-100">
+          <p className="p text-lg max-w-3xl mx-auto text-gray-700">
             Choose the perfect flight training program for your aviation goals. From your first flight 
             to airline captain, we have the expertise and resources to get you there.
           </p>
@@ -279,10 +279,10 @@ export default function ProgramsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-lg bg-gradient-accent text-white">
+      <section className="section-lg bg-white">
         <div className="container-custom text-center">
           <h2 className="h2 mb-6">Ready to Start Your Training?</h2>
-          <p className="p text-xl mb-8 max-w-3xl mx-auto text-gray-100">
+          <p className="p text-xl mb-8 max-w-3xl mx-auto text-gray-700">
             Our experienced instructors are ready to guide you through your aviation journey. 
             Contact us today to discuss your goals and get started.
           </p>
