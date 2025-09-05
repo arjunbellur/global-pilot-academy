@@ -40,7 +40,7 @@ export default function Header() {
               <span className="text-white font-bold text-xs">GPA</span>
             </div>
             <div className="hidden sm:block ml-3">
-              <h1 className="text-body">Global Pilot Academy</h1>
+              <h1 className="text-caption">Global Pilot Academy</h1>
               <p className="text-caption">Professional Flight Training</p>
             </div>
           </Link>
@@ -115,7 +115,7 @@ export default function Header() {
                     <span className="text-white font-bold text-sm">GPA</span>
                   </div>
                   <div className="ml-3">
-                    <h1 className="text-body">Global Pilot Academy</h1>
+                    <h1 className="text-caption">Global Pilot Academy</h1>
                   </div>
                 </Link>
                 <button
