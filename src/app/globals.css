@@ -52,121 +52,165 @@
      STANDARDIZED COMPONENT SYSTEM
      ======================================== */
   
-  /* Typography */
+  /* Typography - Simplified and consistent */
   .text-display {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-gray-900;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-gray-900);
   }
-  
+
   .text-heading {
-    @apply text-xl md:text-2xl font-semibold leading-tight text-gray-900;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--color-gray-900);
   }
-  
+
   .text-subheading {
-    @apply text-lg md:text-xl font-medium text-gray-800;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-snug);
+    color: var(--color-gray-800);
   }
-  
+
   .text-body {
-    @apply text-sm md:text-base leading-relaxed text-gray-700;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-700);
   }
-  
+
   .text-caption {
-    @apply text-xs text-gray-600;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-gray-600);
   }
-  
+
   .text-small {
-    @apply text-xs text-gray-500;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-gray-500);
   }
 
-  /* Buttons */
+  /* Buttons - Simplified and consistent */
   .btn {
-    @apply inline-flex items-center justify-center font-medium transition-all duration-200 rounded-md border cursor-pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-medium);
+    transition: all var(--duration-normal) var(--ease-in-out);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
   }
-  
+
   .btn-sm {
-    @apply text-xs px-3 py-1.5 min-h-[32px];
+    font-size: var(--font-size-sm);
+    padding: var(--space-sm) var(--space-md);
+    min-height: 2rem;
   }
-  
+
   .btn-md {
-    @apply text-sm px-4 py-2 min-h-[36px];
+    font-size: var(--font-size-base);
+    padding: var(--space-sm) var(--space-lg);
+    min-height: 2.5rem;
   }
-  
+
   .btn-lg {
-    @apply text-base px-6 py-3 min-h-[44px];
+    font-size: var(--font-size-lg);
+    padding: var(--space-md) var(--space-xl);
+    min-height: 3rem;
   }
-  
+
   .btn-primary {
-    @apply bg-primary-500 text-white border-primary-500 hover:bg-primary-600 hover:border-primary-600;
+    background-color: var(--color-primary-500);
+    color: white;
+    border-color: var(--color-primary-500);
   }
-  
-  .btn-secondary {
-    @apply bg-white text-primary-500 border-primary-500 hover:bg-primary-50;
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-600);
+    border-color: var(--color-primary-600);
   }
-  
+
   .btn-outline {
-    @apply bg-transparent text-primary-500 border-primary-500 hover:bg-primary-500 hover:text-white;
-  }
-  
-  .btn-ghost {
-    @apply bg-transparent text-gray-700 border-transparent hover:bg-gray-100;
+    background-color: transparent;
+    color: var(--color-primary-500);
+    border-color: var(--color-primary-500);
   }
 
-  /* Cards */
+  .btn-outline:hover {
+    background-color: var(--color-primary-500);
+    color: white;
+  }
+
+  /* Cards - Smaller and more consistent */
   .card {
-    @apply bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200;
+    background-color: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--duration-normal) var(--ease-in-out);
   }
-  
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
   .card-body {
-    @apply p-4 md:p-6;
+    padding: var(--space-md);
   }
-  
+
   .card-header {
-    @apply p-4 md:p-6 pb-0;
+    padding: var(--space-md) var(--space-md) 0 var(--space-md);
   }
-  
+
   .card-footer {
-    @apply p-4 md:p-6 pt-0;
+    padding: 0 var(--space-md) var(--space-md) var(--space-md);
   }
 
-  /* Layout */
+  /* Layout - Simplified and consistent */
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-  
-  .section {
-    @apply py-12 md:py-16 lg:py-20;
-  }
-  
-  .section-sm {
-    @apply py-8 md:py-12;
-  }
-  
-  .section-lg {
-    @apply py-16 md:py-24 lg:py-32;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
   }
 
-  /* Spacing */
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .section-sm {
+    padding: var(--space-lg) 0;
+  }
+
+  .section-lg {
+    padding: var(--space-3xl) 0;
+  }
+
+  /* Spacing - Simplified */
   .space-y-stack > * + * {
-    @apply mt-4;
+    margin-top: var(--space-md);
   }
-  
+
   .space-y-stack-sm > * + * {
-    @apply mt-2;
+    margin-top: var(--space-sm);
   }
-  
+
   .space-y-stack-lg > * + * {
-    @apply mt-6;
+    margin-top: var(--space-lg);
   }
-  
+
   .space-x-inline > * + * {
-    @apply ml-4;
+    margin-left: var(--space-md);
   }
-  
+
   .space-x-inline-sm > * + * {
-    @apply ml-2;
-  }
-  
-  .space-x-inline-lg > * + * {
-    @apply ml-6;
+    margin-left: var(--space-sm);
   }
 
   /* Grids */

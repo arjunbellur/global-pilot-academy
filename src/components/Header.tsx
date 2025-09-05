@@ -21,7 +21,7 @@ export default function Header() {
       {/* Top contact bar */}
       <div className="bg-primary-600 text-white py-2">
         <div className="container">
-          <div className="flex items-center justify-between text-small">
+          <div className="flex items-center justify-between text-small text-white">
             <div className="flex items-center space-x-inline">
               <a href="tel:+18135551234" className="flex items-center hover:text-accent-300 transition-colors">
                 <Phone className="icon-sm mr-1" />
@@ -51,7 +51,7 @@ export default function Header() {
             </div>
             <div className="hidden sm:block ml-3">
               <h1 className="text-heading">Global Pilot Academy</h1>
-              <p className="text-caption">Professional Flight Training</p>
+              <p className="text-small">Professional Flight Training</p>
             </div>
           </Link>
 

@@ -93,10 +93,10 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-10 container text-center text-white px-4">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-white mb-4">
+          <h1 className="text-display mb-4">
             Become a Pilot in Tampa (KVDF).
           </h1>
-          <p className="text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-white mb-6">
+          <p className="text-body max-w-2xl mx-auto mb-6">
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-x-inline">
@@ -231,8 +231,8 @@ export default function HomePage() {
       {/* Questions / Contact Section */}
       <section className="section-lg bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800 text-white">
         <div className="container text-center space-y-stack">
-          <h2 className="text-xl md:text-2xl font-semibold leading-tight text-white">Questions?</h2>
-          <p className="text-sm md:text-base leading-relaxed max-w-3xl mx-auto text-gray-100">
+          <h2 className="text-heading">Questions?</h2>
+          <p className="text-body max-w-3xl mx-auto">
             We're here to help you choose the right starting point and timeline.
           </p>
           <div className="flex justify-center">
@@ -241,7 +241,7 @@ export default function HomePage() {
               <ArrowRight className="icon-md" />
             </Link>
           </div>
-          <p className="text-xs text-gray-300">
+          <p className="text-caption">
             Global Pilot Academy • 6530 Tampa Executive Airport Rd, Suite 111, Tampa, FL 33610<br />
             Phone: (813) 600-4052 • WhatsApp: (813) 428-4423
           </p>
