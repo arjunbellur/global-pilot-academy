@@ -34,8 +34,8 @@ export default function Footer() {
         <div className="grid-responsive">
           {/* Column 1: Contact Information (NAP, WhatsApp) */}
           <div className="stack">
-            <div className="flex items-center" style={{ gap: '0.625em', marginBottom: '1.25em' }}>
-              <div className="bg-primary-500 rounded-lg flex items-center justify-center" style={{ width: '2.25em', height: '2.25em' }}>
+            <div className="flex items-center" style={{ gap: '0.75em', marginBottom: '1.5em' }}>
+              <div className="bg-primary-500 rounded-lg flex items-center justify-center" style={{ width: '2.5em', height: '2.5em' }}>
                 <span className="text-white font-bold text-sm">GPA</span>
               </div>
               <div>
@@ -81,8 +81,8 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="stack">
-            <h3 className="text-lg font-semibold text-white" style={{ marginBottom: '1.25em' }}>Quick Links</h3>
-            <div className="grid grid-cols-2" style={{ gap: '0.75em' }}>
+            <h3 className="text-lg font-semibold text-white" style={{ marginBottom: '1.5em' }}>Quick Links</h3>
+            <div className="grid grid-cols-2" style={{ gap: '1em' }}>
               {quickLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Column 3: Get Started CTAs */}
           <div className="stack">
-            <h3 className="text-lg font-semibold text-white" style={{ marginBottom: '1.25em' }}>Get Started</h3>
+            <h3 className="text-lg font-semibold text-white" style={{ marginBottom: '1.5em' }}>Get Started</h3>
             <div className="stack">
               {getStartedLinks.map((link) => (
                 <Link
@@ -115,18 +115,18 @@ export default function Footer() {
             </div>
 
             {/* Social Media */}
-            <div className="stack" style={{ marginTop: '1.5em' }}>
-              <h4 className="text-sm font-semibold text-gray-400" style={{ marginBottom: '0.75em' }}>Follow Us</h4>
-              <div className="flex" style={{ gap: '0.5em' }}>
+            <div className="stack" style={{ marginTop: '2em' }}>
+              <h4 className="text-sm font-semibold text-gray-400" style={{ marginBottom: '1em' }}>Follow Us</h4>
+              <div className="flex" style={{ gap: '0.75em' }}>
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
                     className="bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-300"
-                    style={{ width: '2.25em', height: '2.25em' }}
+                    style={{ width: '2.5em', height: '2.5em' }}
                     aria-label={social.name}
                   >
-                    <social.icon className="w-4 h-4" />
+                    <social.icon className="w-5 h-5" />
                   </a>
                 ))}
               </div>
@@ -137,12 +137,12 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-gray-800">
-        <div className="container-custom" style={{ padding: '1.25em 0' }}>
+        <div className="container-custom" style={{ padding: '1.5em 0' }}>
           <div className="flex-responsive-col">
             <div className="text-sm text-gray-400">
               <p>&copy; {new Date().getFullYear()} Global Pilot Academy. All rights reserved.</p>
             </div>
-            <div className="flex" style={{ gap: '1em' }}>
+            <div className="flex" style={{ gap: '1.5em' }}>
               <Link href="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
                 Privacy Policy
               </Link>

@@ -79,21 +79,21 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className="container-custom" style={{ padding: '0.75em 0' }}>
+      <nav className="container-custom" style={{ padding: '1em 0' }}>
         <div className="flex-responsive">
           {/* Logo */}
-          <Link href="/" className="flex items-center group" style={{ gap: '0.625em' }}>
-            <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300" style={{ width: '2.5em', height: '2.5em' }}>
-              <span className="text-white font-bold text-sm">GPA</span>
+          <Link href="/" className="flex items-center group" style={{ gap: '0.75em' }}>
+            <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300" style={{ width: '3em', height: '3em' }}>
+              <span className="text-white font-bold text-base">GPA</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-gray-900" style={{ marginBottom: '0.125em' }}>Global Pilot Academy</h1>
-              <p className="text-xs text-gray-600">Professional Flight Training</p>
+              <h1 className="text-xl font-bold text-gray-900" style={{ marginBottom: '0.25em' }}>Global Pilot Academy</h1>
+              <p className="text-sm text-gray-600">Professional Flight Training</p>
             </div>
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center" style={{ gap: '2em' }}>
+          <div className="hidden lg:flex items-center" style={{ gap: '2.5em' }}>
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -107,7 +107,7 @@ export default function Header() {
           </div>
 
           {/* Sticky CTAs */}
-          <div className="hidden lg:flex items-center" style={{ gap: '0.75em' }}>
+          <div className="hidden lg:flex items-center" style={{ gap: '1em' }}>
             <Link href="/discovery" className="btn-accent">
               Book Discovery
             </Link>
