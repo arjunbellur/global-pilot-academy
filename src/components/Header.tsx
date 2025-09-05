@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone, Mail } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 // Navigation items
 const navigation = [
@@ -17,31 +17,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <>
-      {/* Top contact bar - separate from fixed header */}
-      <div className="bg-primary-600 text-white py-2">
-        <div className="container">
-          <div className="flex items-center justify-between text-small text-white">
-            <div className="flex items-center space-x-inline">
-              <a href="tel:+18135551234" className="flex items-center hover:text-accent-300 transition-colors">
-                <Phone className="icon-sm mr-1" />
-                (813) 555-1234
-              </a>
-              <a href="mailto:info@gpapilot.com" className="flex items-center hover:text-accent-300 transition-colors">
-                <Mail className="icon-sm mr-1" />
-                info@gpapilot.com
-              </a>
-            </div>
-            <div className="hidden md:flex items-center space-x-inline-sm">
-              <span>KVDF Airport, Tampa, FL</span>
-              <span>•</span>
-              <span>FAA Part 141 & 61</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
 
       {/* Main navigation */}
       <nav className="container py-3">
@@ -124,7 +100,6 @@ export default function Header() {
           </div>
         )}
       </nav>
-      </header>
-    </>
+    </header>
   )
 }
