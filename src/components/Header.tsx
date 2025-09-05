@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 
@@ -32,13 +32,21 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 10)
+  }, [])
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [handleScroll])
+
+  const toggleMobileMenu = useCallback(() => {
+    setMobileMenuOpen(prev => !prev)
+  }, [])
+
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false)
   }, [])
 
   return (
@@ -77,16 +85,16 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className={`container-custom py-4 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}>
+      <nav className={`container-custom py-4 ${isScrolled ? 'bg-white' : 'bg-transparent'}`} role="navigation" aria-label="Main navigation">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group" aria-label="Global Pilot Academy Home">
             <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 w-12 h-12">
               <span className="text-white font-bold text-lg">GPA</span>
             </div>
-            <div className="hidden sm:block ml-3">
+            <div className="hidden sm:block ml-4">
               <h1 className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Global Pilot Academy</h1>
-              <p className={`text-sm ${isScrolled ? 'text-gray-600' : 'text-gray-200'}`}>Professional Flight Training</p>
+              <p className={`text-sm ${isScrolled ? 'text-gray-700' : 'text-gray-200'}`}>Professional Flight Training</p>
             </div>
           </Link>
 
@@ -112,10 +120,10 @@ export default function Header() {
 
           {/* Sticky CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/discovery" className="btn-accent">
-              Book Discovery
+            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+              Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn-outline">
+            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Schedule Tour
             </Link>
           </div>
@@ -128,7 +136,7 @@ export default function Header() {
                 ? 'text-gray-700 hover:text-primary-500 hover:bg-gray-100' 
                 : 'text-white hover:text-accent-300 hover:bg-white/10'
             }`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? (
@@ -149,7 +157,7 @@ export default function Header() {
                   href={item.href}
                   className="block text-sm font-medium text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors duration-300"
                   style={{ padding: '0.5em 0.75em' }}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   {item.name}
                 </Link>
@@ -157,17 +165,17 @@ export default function Header() {
               <div className="border-t border-gray-200 stack" style={{ paddingTop: '0.75em' }}>
                 <Link
                   href="/discovery"
-                  className="btn-accent text-center"
+                  className="btn-primary text-center"
                   style={{ margin: '0 0.75em' }}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
-                  Book Discovery
+                  Book Discovery Flight
                 </Link>
                 <Link
                   href="/tour"
                   className="btn-outline text-center"
                   style={{ margin: '0 0.75em' }}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   Schedule Tour
                 </Link>

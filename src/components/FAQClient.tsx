@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import { ChevronDown, ChevronUp, Search, Filter } from 'lucide-react'
 
 const faqCategories = [
@@ -142,20 +142,22 @@ export default function FAQClient() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [expandedItems, setExpandedItems] = useState<number[]>([])
 
-  const toggleItem = (id: number) => {
+  const toggleItem = useCallback((id: number) => {
     setExpandedItems(prev =>
       prev.includes(id)
         ? prev.filter(item => item !== id)
         : [...prev, id]
     )
-  }
+  }, [])
 
-  const filteredFaqs = faqs.filter(faq => {
-    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesCategory = selectedCategory === 'All' || faq.category === selectedCategory
-    return matchesSearch && matchesCategory
-  })
+  const filteredFaqs = useMemo(() => {
+    return faqs.filter(faq => {
+      const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+      const matchesCategory = selectedCategory === 'All' || faq.category === selectedCategory
+      return matchesSearch && matchesCategory
+    })
+  }, [searchTerm, selectedCategory])
 
   return (
     <>

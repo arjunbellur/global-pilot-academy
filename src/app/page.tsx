@@ -101,7 +101,7 @@ export default function HomePage() {
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up">
-            <Link href="/enroll" className="btn-accent text-lg px-8 py-4">
+            <Link href="/enroll" className="btn-primary text-lg px-8 py-4">
               Enroll
               <ArrowRight className="w-5 h-5" />
             </Link>
@@ -109,7 +109,7 @@ export default function HomePage() {
               Book Discovery Flight
             </Link>
             <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
-              Schedule a Tour
+              Schedule Tour
             </Link>
           </div>
         </div>

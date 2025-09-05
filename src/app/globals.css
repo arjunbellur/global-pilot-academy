@@ -2,8 +2,11 @@
 /* Import design tokens first */
 @import '../styles/design-tokens.css';
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
 
 @layer base {
@@ -31,17 +34,6 @@
     border-radius: var(--focus-ring-radius);
   }
 
-  /* Reduced motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
 
   /* High contrast mode support */
   @media (prefers-contrast: high) {
@@ -137,10 +129,12 @@
     background-color: var(--color-primary-500);
     color: white;
     box-shadow: var(--shadow-primary);
+    border: 2px solid var(--color-primary-500);
   }
 
   .btn-primary:hover:not(:disabled) {
     background-color: var(--color-primary-600);
+    border-color: var(--color-primary-600);
     transform: translateY(-0.125em);
     box-shadow: var(--shadow-lg);
   }
@@ -159,10 +153,12 @@
     background-color: var(--color-accent-500);
     color: white;
     box-shadow: var(--shadow-accent);
+    border: 2px solid var(--color-accent-500);
   }
 
   .btn-accent:hover:not(:disabled) {
     background-color: var(--color-accent-600);
+    border-color: var(--color-accent-600);
     transform: translateY(-0.125em);
     box-shadow: var(--shadow-lg);
   }
@@ -176,6 +172,8 @@
   .btn-outline:hover:not(:disabled) {
     background-color: var(--color-primary-500);
     color: white;
+    transform: translateY(-0.125em);
+    box-shadow: var(--shadow-lg);
   }
 
   /* Standardized Card System using Design Tokens */
