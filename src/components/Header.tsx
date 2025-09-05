@@ -13,9 +13,9 @@ export default function Header() {
     <header className="static bg-white/95 backdrop-blur-sm border-b border-gray-200">
 
       {/* Top phone bar */}
-      <div className="bg-primary-600 text-white py-1.5">
+      <div className="bg-primary-600 text-white py-1">
         <div className="container">
-          <div className="flex items-center justify-between text-small">
+          <div className="flex items-center justify-between text-xs">
             <div className="flex items-center space-x-inline">
               <a href={PHONE.href} className="flex items-center text-white hover:text-accent-300 transition-colors">
                 <Phone className="icon-sm mr-1" />
@@ -32,21 +32,21 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className="container py-2">
+      <nav className="container py-1">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="bg-gray-900 rounded-lg w-10 h-10 flex items-center justify-center">
+            <div className="bg-gray-900 rounded-lg w-8 h-8 flex items-center justify-center">
               <span className="text-white font-bold text-xs">GPA</span>
             </div>
-            <div className="hidden sm:block ml-3">
-              <h1 className="text-small">Global Pilot Academy</h1>
-              <p className="text-small">Professional Flight Training</p>
+            <div className="hidden sm:block ml-2">
+              <h1 className="text-xs font-semibold">Global Pilot Academy</h1>
+              <p className="text-xs text-gray-600">Professional Flight Training</p>
             </div>
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center space-x-inline">
+          <div className="hidden lg:flex items-center space-x-4">
             {NAV.map((item) => (
               <div key={item.label} className="relative">
                 {item.children ? (
@@ -88,8 +88,8 @@ export default function Header() {
           </div>
 
           {/* CTA buttons */}
-          <div className="hidden lg:flex items-center space-x-inline-sm">
-            <Link href={PRIMARY_CTA.href} className="btn btn-sm btn-primary">
+          <div className="hidden lg:flex items-center space-x-2">
+            <Link href={PRIMARY_CTA.href} className="btn btn-xs btn-primary">
               {PRIMARY_CTA.label}
             </Link>
           </div>
@@ -109,13 +109,13 @@ export default function Header() {
           <div className="lg:hidden fixed inset-0 top-0 z-40 bg-white">
             <div className="flex flex-col h-full">
               {/* Mobile header */}
-              <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <div className="flex items-center justify-between p-3 border-b border-gray-200">
                 <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                  <div className="bg-gray-900 rounded-lg w-10 h-10 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">GPA</span>
+                  <div className="bg-gray-900 rounded-lg w-8 h-8 flex items-center justify-center">
+                    <span className="text-white font-bold text-xs">GPA</span>
                   </div>
-                  <div className="ml-3">
-                    <h1 className="text-caption">Global Pilot Academy</h1>
+                  <div className="ml-2">
+                    <h1 className="text-xs font-semibold">Global Pilot Academy</h1>
                   </div>
                 </Link>
                 <button
@@ -128,13 +128,13 @@ export default function Header() {
               </div>
 
               {/* Mobile navigation */}
-              <div className="flex-1 overflow-y-auto px-4 py-6">
+              <div className="flex-1 overflow-y-auto px-3 py-4">
                 <nav className="space-y-stack">
                   {NAV.map((item) => (
                     <div key={item.label}>
                       {item.children ? (
                         <div>
-                          <div className="font-semibold text-lg text-gray-900 py-2">
+                          <div className="font-semibold text-base text-gray-900 py-1">
                             {item.label}
                           </div>
                           <div className="ml-4 space-y-2">
@@ -153,7 +153,7 @@ export default function Header() {
                       ) : (
                         <Link
                           href={item.href!}
-                          className="block py-2 text-lg font-semibold text-gray-900 hover:text-primary-500 transition-colors"
+                          className="block py-1 text-base font-semibold text-gray-900 hover:text-primary-500 transition-colors"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {item.label}
@@ -165,10 +165,10 @@ export default function Header() {
               </div>
 
               {/* Mobile CTA */}
-              <div className="p-4 border-t border-gray-200">
+              <div className="p-3 border-t border-gray-200">
                 <Link
                   href={PRIMARY_CTA.href}
-                  className="btn btn-lg btn-primary w-full text-center"
+                  className="btn btn-sm btn-primary w-full text-center"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {PRIMARY_CTA.label}
