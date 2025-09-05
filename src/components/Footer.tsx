@@ -28,7 +28,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white" role="contentinfo">
+    <footer className="bg-gray-900 text-white px-4 sm:px-6 lg:px-8" role="contentinfo">
       {/* Main footer content */}
       <div className="container section">
         <div className="grid-3">
