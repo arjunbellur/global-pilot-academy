@@ -17,7 +17,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <header className="static bg-white/95 backdrop-blur-sm border-b border-gray-200">
 
       {/* Main navigation */}
       <nav className="container py-3">
