@@ -13,7 +13,7 @@ export default function Header() {
     <header className="static bg-white/95 backdrop-blur-sm border-b border-gray-200">
 
       {/* Top phone bar */}
-      <div className="bg-primary-600 text-white py-2">
+      <div className="bg-primary-600 text-white py-1.5">
         <div className="container">
           <div className="flex items-center justify-between text-small">
             <div className="flex items-center space-x-inline">
@@ -32,7 +32,7 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className="container py-3">
+      <nav className="container py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">

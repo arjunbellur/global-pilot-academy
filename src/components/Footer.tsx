@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 import { FOOTER_NAV } from '../data/nav'
