@@ -232,6 +232,21 @@
     margin-left: var(--space-lg);
   }
 
+  /* Custom scroll line animation */
+  @keyframes scrollLine {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(400%);
+      opacity: 0;
+    }
+  }
+
   .space-y-stack-lg > * + * {
     margin-top: var(--space-lg);
   }

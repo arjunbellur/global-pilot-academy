@@ -114,9 +114,12 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="w-0.5 h-16 bg-gray-400 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-4 bg-gray-600 animate-pulse"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gray-600 animate-bounce" style={{
+              animation: 'scrollLine 2s ease-in-out infinite'
+            }}></div>
           </div>
         </div>
       </section>
