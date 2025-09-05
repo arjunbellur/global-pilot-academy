@@ -1,28 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-poppins',
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: {
     default: 'Global Pilot Academy - FAA Part 141 & 61 Flight School in Tampa, FL',
     template: '%s | Global Pilot Academy'
   },
-  description: 'FAA Part 141 & 61 certified flight school at Tampa Executive Airport (KVDF). Professional pilot training programs: Private Pilot, Instrument Rating, Commercial Pilot, CFI, Airline Track.',
+  description: 'Global Pilot Academy (KVDF) offers structured flight training from Private Pilot to Airline Track, with in-house DPE, international student support, and housing options.',
   keywords: [
     'flight school Tampa',
     'pilot training Florida',
@@ -92,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -101,7 +87,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#1c3faa" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className="antialiased">
         {/* Skip to content link for accessibility */}
         <a href="#main-content" className="skip-link">
           Skip to main content
