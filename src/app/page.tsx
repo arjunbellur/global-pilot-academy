@@ -88,36 +88,27 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/80 via-primary-800/70 to-accent-800/60"></div>
-          <Image
-            src="/images/hero-bg.jpg"
-            alt="Aircraft flying over Tampa Bay"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800"></div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container-custom text-center text-white" style={{ padding: '3em 1.5em' }}>
-          <h1 className="h1 animate-fade-in">
+        <div className="relative z-10 container-custom text-center text-white px-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in">
             Become a Pilot in Tampa (KVDF).
           </h1>
-          <p className="p text-lg max-w-3xl mx-auto text-gray-100 animate-slide-up" style={{ marginBottom: '2.5em' }}>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-100 mb-8 animate-slide-up">
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
-          <div className="flex-responsive animate-slide-up" style={{ justifyContent: 'center', gap: '1.5em' }}>
-            <Link href="/enroll" className="btn-accent">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up">
+            <Link href="/enroll" className="btn-accent text-lg px-8 py-4">
               Enroll
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
               Schedule a Tour
             </Link>
           </div>

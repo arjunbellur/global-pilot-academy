@@ -207,50 +207,50 @@
 
   /* Standardized Section System using Design Tokens */
   .section {
-    padding: var(--space-3xl) 0;
+    padding: 4rem 0;
   }
 
   .section-sm {
-    padding: var(--space-2xl) 0;
+    padding: 2rem 0;
   }
 
   .section-lg {
-    padding: var(--space-4xl) 0;
+    padding: 6rem 0;
   }
 
   /* Standardized Container using Design Tokens */
   .container-custom {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-left: var(--space-lg);
-    padding-right: var(--space-lg);
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   @media (min-width: 640px) {
     .container-custom {
-      padding-left: var(--space-xl);
-      padding-right: var(--space-xl);
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 768px) {
     .container-custom {
-      padding-left: var(--space-2xl);
-      padding-right: var(--space-2xl);
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container-custom {
-      padding-left: var(--space-3xl);
-      padding-right: var(--space-3xl);
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
   }
 
   @media (min-width: 1280px) {
     .container-custom {
-      padding-left: var(--space-4xl);
-      padding-right: var(--space-4xl);
+      padding-left: 3rem;
+      padding-right: 3rem;
     }
   }
 
