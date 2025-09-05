@@ -94,13 +94,13 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-10 container-custom text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 animate-fade-in">
             Become a Pilot in Tampa (KVDF).
           </h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-100 mb-8 animate-slide-up">
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up">
             <Link href="/enroll" className="btn-primary text-lg px-8 py-4">
               Enroll
               <ArrowRight className="w-5 h-5" />
