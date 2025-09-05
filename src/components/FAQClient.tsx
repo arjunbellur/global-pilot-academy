@@ -225,14 +225,14 @@ export default function FAQClient() {
       </section>
 
       {/* FAQ List */}
-      <section className="section-sm bg-gray-50">
+      <section className="section-sm bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto space-y-stack">
             {filteredFaqs.map((faq) => (
               <div key={faq.id} className="card">
                 <button
                   onClick={() => toggleItem(faq.id)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-100 transition-colors"
                   aria-expanded={expandedItems.includes(faq.id)}
                   aria-controls={`faq-answer-${faq.id}`}
                 >

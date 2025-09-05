@@ -138,7 +138,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-sm bg-gray-50">
+      <section className="section-sm bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
@@ -196,7 +196,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="section-sm bg-gray-50">
+      <section className="section-sm bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="h2 mb-4">Our Values</h2>
@@ -264,7 +264,7 @@ export default function AboutPage() {
       </section>
 
       {/* Student Reviews */}
-      <section className="section-sm bg-gray-50">
+      <section className="section-sm bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="h2 mb-4">What Our Students Say</h2>

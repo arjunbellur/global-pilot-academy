@@ -130,7 +130,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Program Types */}
-      <section className="section-sm bg-gray-50">
+      <section className="section-sm bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="h2 mb-4">Training Options</h2>

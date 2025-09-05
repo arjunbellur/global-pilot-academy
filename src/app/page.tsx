@@ -122,12 +122,12 @@ export default function HomePage() {
       </section>
 
       {/* Why Global Pilot Academy Section */}
-      <section className="section-sm bg-gray-50">
+      <section className="section-sm bg-white">
         <div className="container">
           <div className="grid-4">
             {whyGPA.map((item, index) => (
               <div key={index} className="text-center space-y-stack">
-                <div className="mx-auto bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+                <div className="mx-auto bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
                   <item.icon className={`icon-xl ${item.color}`} />
                 </div>
                 <p className="text-body font-medium">{item.text}</p>
@@ -157,7 +157,7 @@ export default function HomePage() {
       </section>
 
       {/* Admissions Preview Section */}
-      <section className="section bg-gray-50">
+      <section className="section bg-white">
         <div className="container">
           <div className="grid-2">
             {admissions.map((admission) => (
