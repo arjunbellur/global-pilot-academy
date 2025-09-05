@@ -131,7 +131,7 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+            src="https://via.placeholder.com/1200x800/7C3AED/FFFFFF?text=About+Us"
             alt="Pilot in uniform with aircraft"
             fill
             className="object-cover opacity-20"

@@ -36,7 +36,7 @@ const graduateSuccess = [
     company: 'Southwest Airlines',
     content: 'Global Pilot Academy gave me the skills and confidence to pursue my dream career. The instructors are exceptional and the training is world-class.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
+    image: 'https://via.placeholder.com/150x150/4F46E5/FFFFFF?text=JD'
   },
   {
     name: 'Michael Chen',
@@ -44,7 +44,7 @@ const graduateSuccess = [
     company: 'GPA Alumni',
     content: 'The structured approach and experienced instructors made all the difference. I went from zero flight experience to CFI in just 14 months.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
+    image: 'https://via.placeholder.com/150x150/059669/FFFFFF?text=SM'
   },
   {
     name: 'Emily Rodriguez',
@@ -52,7 +52,7 @@ const graduateSuccess = [
     company: 'Recreational Flyer',
     content: 'Amazing experience learning to fly here. The staff is professional, the aircraft are well-maintained, and the training is comprehensive.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face'
+    image: 'https://via.placeholder.com/150x150/DC2626/FFFFFF?text=AL'
   }
 ]
 
@@ -91,7 +91,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            src="https://via.placeholder.com/1200x800/1E40AF/FFFFFF?text=Aviation+Training"
             alt="Pilot in cockpit with aviation controls"
             fill
             className="object-cover"
@@ -138,7 +138,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1588614959060-4d144f28a207?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            src="https://via.placeholder.com/1200x800/059669/FFFFFF?text=Flight+Training"
             alt="Aircraft on tarmac at airport"
             fill
             className="object-cover opacity-10"
@@ -202,7 +202,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+            src="https://via.placeholder.com/1200x800/DC2626/FFFFFF?text=Pilot+Education"
             alt="Pilot in uniform with aircraft"
             fill
             className="object-cover opacity-5"
