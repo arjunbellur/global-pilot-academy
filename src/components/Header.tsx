@@ -89,17 +89,17 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group" aria-label="Global Pilot Academy Home">
-            <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 w-12 h-12">
-              <span className="text-white font-bold text-lg">GPA</span>
+            <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 w-10 h-10">
+              <span className="text-white font-bold text-sm">GPA</span>
             </div>
-            <div className="hidden sm:block ml-4">
-              <h1 className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Global Pilot Academy</h1>
-              <p className={`text-sm ${isScrolled ? 'text-gray-700' : 'text-gray-200'}`}>Professional Flight Training</p>
+            <div className="hidden sm:block ml-3">
+              <h1 className={`text-lg font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Global Pilot Academy</h1>
+              <p className={`text-xs ${isScrolled ? 'text-gray-700' : 'text-gray-200'}`}>Professional Flight Training</p>
             </div>
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -119,11 +119,11 @@ export default function Header() {
           </div>
 
           {/* Sticky CTAs */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-sm px-4 py-2">
+          <div className="hidden lg:flex items-center space-x-3">
+            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-xs px-3 py-1.5">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-sm px-4 py-2">
+            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-xs px-3 py-1.5">
               Schedule Tour
             </Link>
           </div>
@@ -165,7 +165,7 @@ export default function Header() {
               <div className="border-t border-gray-200 stack" style={{ paddingTop: '0.75em' }}>
                 <Link
                   href="/discovery"
-                  className="btn-primary text-center text-sm px-4 py-2"
+                  className="btn-primary text-center text-xs px-3 py-1.5"
                   style={{ margin: '0 0.75em' }}
                   onClick={closeMobileMenu}
                 >
@@ -173,7 +173,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/tour"
-                  className="btn-outline text-center text-sm px-4 py-2"
+                  className="btn-outline text-center text-xs px-3 py-1.5"
                   style={{ margin: '0 0.75em' }}
                   onClick={closeMobileMenu}
                 >
