@@ -253,7 +253,7 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative py-16 lg:py-24 flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900/80 via-primary-800/70 to-accent-800/60"></div>
@@ -267,19 +267,19 @@ export default function HomePage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 container-custom text-center text-white box">
+        <div className="relative z-10 container-custom text-center text-white" style={{ padding: '2em 1em' }}>
           <h1 className="h1 animate-fade-in">
             Your Journey to the
             <span className="block text-accent-400">Skies Begins Here</span>
           </h1>
-          <p className="p text-responsive-lg max-w-3xl mx-auto text-gray-100 animate-slide-up">
+          <p className="p text-lg max-w-3xl mx-auto text-gray-100 animate-slide-up" style={{ marginBottom: '2em' }}>
             Professional flight training at KVDF Airport in Tampa, FL. From Private Pilot to Airline Captain,
             we provide comprehensive training with experienced instructors and a modern fleet.
           </p>
-          <div className="flex-responsive animate-slide-up" style={{ justifyContent: 'center' }}>
+          <div className="flex-responsive animate-slide-up" style={{ justifyContent: 'center', gap: '1em' }}>
             <Link href="/enroll" className="btn-accent">
               Start Your Training
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Book Discovery Flight

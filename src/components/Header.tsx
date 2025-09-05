@@ -48,7 +48,7 @@ export default function Header() {
         : 'bg-white'
     }`}>
       {/* Top bar with contact info */}
-      <div className="bg-primary-600 text-white" style={{ padding: '0.5em 0' }}>
+      <div className="bg-primary-600 text-white" style={{ padding: '0.375em 0' }}>
         <div className="container-custom">
           <div className="flex-responsive">
             <div className="cluster-sm">
@@ -57,19 +57,19 @@ export default function Header() {
                 className="flex items-center hover:text-accent-300 transition-colors duration-300"
                 style={{ gap: '0.25em' }}
               >
-                <Phone className="w-4 h-4" />
-                <span className="text-responsive-sm">(813) 555-1234</span>
+                <Phone className="w-3.5 h-3.5" />
+                <span className="text-xs">(813) 555-1234</span>
               </a>
               <a
                 href="mailto:info@gpapilot.com"
                 className="flex items-center hover:text-accent-300 transition-colors duration-300"
                 style={{ gap: '0.25em' }}
               >
-                <Mail className="w-4 h-4" />
-                <span className="text-responsive-sm">info@gpapilot.com</span>
+                <Mail className="w-3.5 h-3.5" />
+                <span className="text-xs">info@gpapilot.com</span>
               </a>
             </div>
-            <div className="hidden md:flex items-center cluster-sm text-responsive-sm">
+            <div className="hidden md:flex items-center cluster-sm text-xs">
               <span>KVDF Airport, Tampa, FL</span>
               <span>•</span>
               <span>FAA Part 141 & 61</span>
@@ -79,21 +79,21 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className="container-custom" style={{ padding: '1em 0' }}>
+      <nav className="container-custom" style={{ padding: '0.75em 0' }}>
         <div className="flex-responsive">
           {/* Logo */}
-          <Link href="/" className="flex items-center group" style={{ gap: '0.75em' }}>
-            <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300" style={{ width: '3em', height: '3em' }}>
-              <span className="text-white font-bold text-responsive">GPA</span>
+          <Link href="/" className="flex items-center group" style={{ gap: '0.625em' }}>
+            <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300" style={{ width: '2.5em', height: '2.5em' }}>
+              <span className="text-white font-bold text-sm">GPA</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-responsive-lg font-bold text-gray-900" style={{ marginBottom: '0.25em' }}>Global Pilot Academy</h1>
-              <p className="text-responsive-sm text-gray-600">Professional Flight Training</p>
+              <h1 className="text-lg font-bold text-gray-900" style={{ marginBottom: '0.125em' }}>Global Pilot Academy</h1>
+              <p className="text-xs text-gray-600">Professional Flight Training</p>
             </div>
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center cluster-lg">
+          <div className="hidden lg:flex items-center" style={{ gap: '2em' }}>
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -107,7 +107,7 @@ export default function Header() {
           </div>
 
           {/* Sticky CTAs */}
-          <div className="hidden lg:flex items-center cluster">
+          <div className="hidden lg:flex items-center" style={{ gap: '0.75em' }}>
             <Link href="/discovery" className="btn-accent">
               Book Discovery
             </Link>
@@ -134,24 +134,24 @@ export default function Header() {
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200" style={{ marginTop: '1em', paddingBottom: '1em' }}>
-            <div className="stack" style={{ paddingTop: '1em' }}>
+          <div className="lg:hidden border-t border-gray-200" style={{ marginTop: '0.75em', paddingBottom: '0.75em' }}>
+            <div className="stack" style={{ paddingTop: '0.75em' }}>
               {fullNavigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-responsive font-medium text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors duration-300"
-                  style={{ padding: '0.5em 1em' }}
+                  className="block text-sm font-medium text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors duration-300"
+                  style={{ padding: '0.5em 0.75em' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="border-t border-gray-200 stack" style={{ paddingTop: '1em' }}>
+              <div className="border-t border-gray-200 stack" style={{ paddingTop: '0.75em' }}>
                 <Link
                   href="/discovery"
                   className="btn-accent text-center"
-                  style={{ margin: '0 1em' }}
+                  style={{ margin: '0 0.75em' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Book Discovery
@@ -159,7 +159,7 @@ export default function Header() {
                 <Link
                   href="/tour"
                   className="btn-outline text-center"
-                  style={{ margin: '0 1em' }}
+                  style={{ margin: '0 0.75em' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Schedule Tour

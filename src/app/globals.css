@@ -61,9 +61,10 @@
   /* Modern Button System with Box-Style Spacing */
   .btn {
     @apply inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
-    padding: 0.75em 1.5em;
-    border-radius: 0.5em;
-    gap: 0.5em;
+    padding: 0.625em 1.25em;
+    border-radius: 0.375em;
+    gap: 0.375em;
+    font-size: 0.875rem;
   }
 
   .btn-primary {
@@ -108,7 +109,7 @@
   }
 
   .card-content {
-    padding: 2em;
+    padding: 1.5em;
   }
 
   /* Modern Section System with Dynamic Spacing */
@@ -133,47 +134,47 @@
 
   /* Box-Style Layout Utilities */
   .box {
-    padding: 2em;
-    margin-bottom: 2em;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
   }
 
   .box-sm {
-    padding: 1em;
-    margin-bottom: 1em;
+    padding: 0.75em;
+    margin-bottom: 0.75em;
   }
 
   .box-lg {
-    padding: 3em;
-    margin-bottom: 3em;
+    padding: 2.5em;
+    margin-bottom: 2.5em;
   }
 
   .stack {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.75em;
   }
 
   .stack-sm {
-    gap: 0.5em;
+    gap: 0.375em;
   }
 
   .stack-lg {
-    gap: 2em;
+    gap: 1.5em;
   }
 
   .cluster {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 0.75em;
     align-items: center;
   }
 
   .cluster-sm {
-    gap: 0.5em;
+    gap: 0.375em;
   }
 
   .cluster-lg {
-    gap: 2em;
+    gap: 1.5em;
   }
 
   /* Skip to content link */
@@ -189,7 +190,8 @@
   /* Modern Navigation System */
   .nav-link {
     @apply text-gray-700 hover:text-primary-500 transition-colors duration-300 font-medium;
-    padding: 0.5em 0;
+    padding: 0.375em 0;
+    font-size: 0.875rem;
   }
 
   .nav-link-active {
@@ -198,18 +200,19 @@
 
   /* Modern Form System with Box-Style Design */
   .form-input {
-    @apply w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300;
-    padding: 0.75em 1em;
+    @apply w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300;
+    padding: 0.625em 0.875em;
+    font-size: 0.875rem;
   }
 
   .form-label {
     @apply block font-medium text-gray-700;
-    margin-bottom: 0.5em;
-    font-size: 0.875em;
+    margin-bottom: 0.375em;
+    font-size: 0.8125rem;
   }
 
   .form-group {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.25em;
   }
 
   /* Modern Animation System */
