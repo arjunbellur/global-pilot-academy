@@ -8,8 +8,12 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   swcMinify: true,
-  // Disable build traces to fix the stack overflow error
+  // Disable source maps to reduce build complexity
+  productionBrowserSourceMaps: false,
+  // Disable build optimization to prevent stack overflow
   experimental: {
+    // Use minimal experimental features
+    webpackBuildWorker: false,
     buildTraces: false,
   },
 }

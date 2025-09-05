@@ -48,26 +48,28 @@ export default function Header() {
         : 'bg-white'
     }`}>
       {/* Top bar with contact info */}
-      <div className="bg-primary-600 text-white py-2">
+      <div className="bg-primary-600 text-white" style={{ padding: '0.5em 0' }}>
         <div className="container-custom">
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center space-x-4">
-              <a 
-                href="tel:+18135551234" 
-                className="flex items-center space-x-1 hover:text-accent-300 transition-colors"
+          <div className="flex-responsive">
+            <div className="cluster-sm">
+              <a
+                href="tel:+18135551234"
+                className="flex items-center hover:text-accent-300 transition-colors duration-300"
+                style={{ gap: '0.25em' }}
               >
-                <Phone className="w-3 h-3" />
-                <span>(813) 555-1234</span>
+                <Phone className="w-4 h-4" />
+                <span className="text-responsive-sm">(813) 555-1234</span>
               </a>
-              <a 
-                href="mailto:info@gpapilot.com" 
-                className="flex items-center space-x-1 hover:text-accent-300 transition-colors"
+              <a
+                href="mailto:info@gpapilot.com"
+                className="flex items-center hover:text-accent-300 transition-colors duration-300"
+                style={{ gap: '0.25em' }}
               >
-                <Mail className="w-3 h-3" />
-                <span>info@gpapilot.com</span>
+                <Mail className="w-4 h-4" />
+                <span className="text-responsive-sm">info@gpapilot.com</span>
               </a>
             </div>
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center cluster-sm text-responsive-sm">
               <span>KVDF Airport, Tampa, FL</span>
               <span>•</span>
               <span>FAA Part 141 & 61</span>
@@ -77,21 +79,21 @@ export default function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav className="container-custom py-4">
-        <div className="flex items-center justify-between">
+      <nav className="container-custom" style={{ padding: '1em 0' }}>
+        <div className="flex-responsive">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors">
-              <span className="text-white font-bold text-xl">GPA</span>
+          <Link href="/" className="flex items-center group" style={{ gap: '0.75em' }}>
+            <div className="bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300" style={{ width: '3em', height: '3em' }}>
+              <span className="text-white font-bold text-responsive">GPA</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900">Global Pilot Academy</h1>
-              <p className="text-sm text-gray-600">Professional Flight Training</p>
+              <h1 className="text-responsive-lg font-bold text-gray-900" style={{ marginBottom: '0.25em' }}>Global Pilot Academy</h1>
+              <p className="text-responsive-sm text-gray-600">Professional Flight Training</p>
             </div>
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center cluster-lg">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -105,7 +107,7 @@ export default function Header() {
           </div>
 
           {/* Sticky CTAs */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center cluster">
             <Link href="/discovery" className="btn-accent">
               Book Discovery
             </Link>
@@ -117,7 +119,8 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-primary-500 hover:bg-gray-100 transition-colors"
+            className="lg:hidden rounded-md text-gray-700 hover:text-primary-500 hover:bg-gray-100 transition-colors duration-300"
+            style={{ padding: '0.5em' }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -131,29 +134,32 @@ export default function Header() {
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="pt-4 space-y-2">
+          <div className="lg:hidden border-t border-gray-200" style={{ marginTop: '1em', paddingBottom: '1em' }}>
+            <div className="stack" style={{ paddingTop: '1em' }}>
               {fullNavigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors"
+                  className="block text-responsive font-medium text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors duration-300"
+                  style={{ padding: '0.5em 1em' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-gray-200 space-y-3">
+              <div className="border-t border-gray-200 stack" style={{ paddingTop: '1em' }}>
                 <Link
                   href="/discovery"
-                  className="block mx-4 btn-accent text-center"
+                  className="btn-accent text-center"
+                  style={{ margin: '0 1em' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Book Discovery
                 </Link>
                 <Link
                   href="/tour"
-                  className="block mx-4 btn-outline text-center"
+                  className="btn-outline text-center"
+                  style={{ margin: '0 1em' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Schedule Tour

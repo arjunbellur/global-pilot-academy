@@ -265,28 +265,28 @@ export default function HomePage() {
             priority
           />
         </div>
-        
+
         {/* Hero Content */}
-        <div className="relative z-10 container-custom text-center text-white">
-          <h1 className="h1 mb-6 animate-fade-in">
+        <div className="relative z-10 container-custom text-center text-white box">
+          <h1 className="h1 animate-fade-in">
             Your Journey to the
             <span className="block text-accent-400">Skies Begins Here</span>
           </h1>
-          <p className="p text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-100 animate-slide-up">
-            Professional flight training at KVDF Airport in Tampa, FL. From Private Pilot to Airline Captain, 
+          <p className="p text-responsive-lg max-w-3xl mx-auto text-gray-100 animate-slide-up">
+            Professional flight training at KVDF Airport in Tampa, FL. From Private Pilot to Airline Captain,
             we provide comprehensive training with experienced instructors and a modern fleet.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-            <Link href="/enroll" className="btn-accent text-lg px-8 py-4">
+          <div className="flex-responsive animate-slide-up" style={{ justifyContent: 'center' }}>
+            <Link href="/enroll" className="btn-accent">
               Start Your Training
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/discovery" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Book Discovery Flight
             </Link>
           </div>
         </div>
-        
+
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
@@ -298,13 +298,13 @@ export default function HomePage() {
       {/* Trust Badges Section */}
       <section className="section-sm bg-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid-responsive-sm">
             {trustBadges.map((badge, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+              <div key={index} className="text-center group stack">
+                <div className="mx-auto bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300" style={{ width: '4em', height: '4em', marginBottom: '1em' }}>
                   <badge.icon className={`w-8 h-8 ${badge.color}`} />
                 </div>
-                <p className="text-sm font-medium text-gray-700">{badge.text}</p>
+                <p className="text-responsive-sm font-medium text-gray-700">{badge.text}</p>
               </div>
             ))}
           </div>
@@ -314,55 +314,55 @@ export default function HomePage() {
       {/* Programs Preview Section */}
       <section className="section">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="h2 mb-4">Our Training Programs</h2>
+          <div className="text-center stack">
+            <h2 className="h2">Our Training Programs</h2>
             <p className="p max-w-3xl mx-auto">
-              Choose from our comprehensive range of flight training programs, designed to take you from 
+              Choose from our comprehensive range of flight training programs, designed to take you from
               your first flight to your dream aviation career.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid-responsive">
             {programs.map((program) => (
-              <div key={program.id} className="card-hover group">
-                <div className="relative h-48 bg-gray-200 rounded-t-xl overflow-hidden">
+              <div key={program.id} className="card card-hover group">
+                <div className="relative bg-gray-200 rounded-t-xl overflow-hidden" style={{ height: '12em' }}>
                   <Image
                     src={program.image}
                     alt={program.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute top-4 right-4 bg-primary-500 text-white rounded-full text-responsive-sm font-medium" style={{ padding: '0.25em 0.75em' }}>
                     {program.duration}
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="h3 mb-3">{program.title}</h3>
-                  <p className="p-sm mb-4">{program.description}</p>
-                  <div className="mb-4">
-                    <p className="text-2xl font-bold text-primary-600">{program.price}</p>
+                <div className="card-content">
+                  <h3 className="h3">{program.title}</h3>
+                  <p className="p-sm">{program.description}</p>
+                  <div style={{ marginBottom: '1em' }}>
+                    <p className="text-responsive-lg font-bold text-primary-600">{program.price}</p>
                   </div>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="stack-sm" style={{ marginBottom: '1.5em' }}>
                     {program.features.map((feature, index) => (
-                      <li key={index} className="flex items-center space-x-2">
+                      <li key={index} className="flex items-center" style={{ gap: '0.5em' }}>
                         <CheckCircle className="w-4 h-4 text-accent-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{feature}</span>
+                        <span className="text-responsive-sm text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Link href={program.href} className="btn-primary w-full text-center group-hover:bg-primary-600">
                     Learn More
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
             ))}
           </div>
-          
-          <div className="text-center mt-12">
-            <Link href="/programs" className="btn-outline text-lg px-8 py-4">
+
+          <div className="text-center" style={{ marginTop: '3em' }}>
+            <Link href="/programs" className="btn-outline">
               View All Programs
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -371,18 +371,18 @@ export default function HomePage() {
       {/* Fleet Preview Section */}
       <section className="section bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="h2 mb-4">Our Aircraft Fleet</h2>
+          <div className="text-center stack">
+            <h2 className="h2">Our Aircraft Fleet</h2>
             <p className="p max-w-3xl mx-auto">
-              Train on modern, well-maintained aircraft equipped with the latest avionics. 
+              Train on modern, well-maintained aircraft equipped with the latest avionics.
               Our diverse fleet ensures you're prepared for any aviation career path.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div className="grid-responsive-lg">
             {fleet.map((aircraft, index) => (
-              <div key={index} className="card-hover text-center group">
-                <div className="relative h-40 bg-gray-200 rounded-t-xl overflow-hidden">
+              <div key={index} className="card card-hover text-center group">
+                <div className="relative bg-gray-200 rounded-t-xl overflow-hidden" style={{ height: '10em' }}>
                   <Image
                     src={aircraft.image}
                     alt={aircraft.name}
@@ -390,12 +390,12 @@ export default function HomePage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-1">{aircraft.name}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{aircraft.tail}</p>
-                  <p className="text-sm text-gray-500 mb-3">{aircraft.type}</p>
-                  <p className="text-lg font-bold text-primary-600 mb-3">{aircraft.rate}</p>
-                  <ul className="space-y-1 text-xs text-gray-600">
+                <div className="card-content">
+                  <h3 className="text-responsive-lg font-semibold" style={{ marginBottom: '0.25em' }}>{aircraft.name}</h3>
+                  <p className="text-responsive-sm text-gray-600" style={{ marginBottom: '0.5em' }}>{aircraft.tail}</p>
+                  <p className="text-responsive-sm text-gray-500" style={{ marginBottom: '0.75em' }}>{aircraft.type}</p>
+                  <p className="text-responsive-lg font-bold text-primary-600" style={{ marginBottom: '0.75em' }}>{aircraft.rate}</p>
+                  <ul className="stack-sm text-responsive-sm text-gray-600">
                     {aircraft.features.map((feature, featureIndex) => (
                       <li key={featureIndex}>{feature}</li>
                     ))}
@@ -404,11 +404,11 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          
-          <div className="text-center mt-12">
-            <Link href="/fleet" className="btn-outline text-lg px-8 py-4">
+
+          <div className="text-center" style={{ marginTop: '3em' }}>
+            <Link href="/fleet" className="btn-outline">
               View Full Fleet
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -417,28 +417,28 @@ export default function HomePage() {
       {/* Testimonials Section */}
       <section className="section">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="h2 mb-4">What Our Students Say</h2>
+          <div className="text-center stack">
+            <h2 className="h2">What Our Students Say</h2>
             <p className="p max-w-3xl mx-auto">
-              Hear from our graduates who have successfully launched their aviation careers 
+              Hear from our graduates who have successfully launched their aviation careers
               through our comprehensive training programs.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid-responsive">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-hover">
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
+              <div key={index} className="card card-hover">
+                <div className="card-content">
+                  <div className="flex items-center" style={{ marginBottom: '1em', gap: '0.125em' }}>
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <blockquote className="text-gray-700 mb-6 italic">
+                  <blockquote className="text-gray-700" style={{ marginBottom: '1.5em', fontStyle: 'italic' }}>
                     "{testimonial.content}"
                   </blockquote>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                  <div className="flex items-center" style={{ gap: '0.75em' }}>
+                    <div className="bg-gray-200 rounded-full overflow-hidden" style={{ width: '3em', height: '3em', flexShrink: 0 }}>
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -448,9 +448,9 @@ export default function HomePage() {
                       />
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
-                      <p className="text-sm text-primary-600">{testimonial.company}</p>
+                      <p className="font-semibold text-gray-900 text-responsive-sm">{testimonial.name}</p>
+                      <p className="text-responsive-sm text-gray-600">{testimonial.role}</p>
+                      <p className="text-responsive-sm text-primary-600">{testimonial.company}</p>
                     </div>
                   </div>
                 </div>
@@ -462,22 +462,22 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="section-lg bg-gradient-hero text-white">
-        <div className="container-custom text-center">
-          <h2 className="h2 mb-6">Ready to Start Your Aviation Journey?</h2>
-          <p className="p text-xl mb-8 max-w-3xl mx-auto text-gray-100">
-            Join hundreds of successful pilots who started their careers at Global Pilot Academy. 
+        <div className="container-custom text-center stack">
+          <h2 className="h2">Ready to Start Your Aviation Journey?</h2>
+          <p className="p text-responsive-lg max-w-3xl mx-auto text-gray-100">
+            Join hundreds of successful pilots who started their careers at Global Pilot Academy.
             Our expert instructors and comprehensive training programs will guide you every step of the way.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/enroll" className="btn-accent text-lg px-8 py-4">
+          <div className="flex-responsive" style={{ justifyContent: 'center' }}>
+            <Link href="/enroll" className="btn-accent">
               Enroll Now
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/contact" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-gray-900">
+            <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Contact Us
             </Link>
           </div>
-          <p className="text-sm text-gray-300 mt-6">
+          <p className="text-responsive-sm text-gray-300">
             Questions? Call us at (813) 555-1234 or email info@gpapilot.com
           </p>
         </div>

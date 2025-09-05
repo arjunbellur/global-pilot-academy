@@ -6,38 +6,74 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: clamp(16px, 2.5vw, 20px); /* Fluid base font size */
   }
 
   body {
     @apply font-sans text-gray-900 bg-white;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Modern focus styles */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary-500));
+    outline-offset: 2px;
   }
 }
 
 @layer components {
-  /* Typography */
+  /* Modern Box-Style Typography System */
   .h1 {
-    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900;
+    @apply font-display text-6xl font-bold leading-tight text-gray-900;
+    margin-bottom: 1em;
   }
 
   .h2 {
-    @apply font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-gray-900;
+    @apply font-display text-5xl font-semibold leading-tight text-gray-900;
+    margin-bottom: 0.8em;
   }
 
   .h3 {
-    @apply font-display text-2xl md:text-3xl font-semibold leading-tight text-gray-900;
+    @apply font-display text-3xl font-semibold leading-tight text-gray-900;
+    margin-bottom: 0.7em;
+  }
+
+  .h4 {
+    @apply font-display text-2xl font-semibold leading-tight text-gray-900;
+    margin-bottom: 0.6em;
   }
 
   .p {
-    @apply text-base md:text-lg leading-relaxed text-gray-700;
+    @apply text-base leading-relaxed text-gray-700;
+    margin-bottom: 1em;
   }
 
-  /* Buttons */
+  .p-sm {
+    @apply text-sm leading-relaxed text-gray-600;
+    margin-bottom: 0.8em;
+  }
+
+  /* Modern Button System with Box-Style Spacing */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    padding: 0.75em 1.5em;
+    border-radius: 0.5em;
+    gap: 0.5em;
   }
 
   .btn-primary {
-    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+    box-shadow: 0 0.25em 0.5em rgba(28, 63, 170, 0.2);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-0.125em);
+    box-shadow: 0 0.5em 1em rgba(28, 63, 170, 0.3);
   }
 
   .btn-secondary {
@@ -45,56 +81,138 @@
   }
 
   .btn-accent {
-    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500;
+    box-shadow: 0 0.25em 0.5em rgba(0, 179, 164, 0.2);
+  }
+
+  .btn-accent:hover {
+    transform: translateY(-0.125em);
+    box-shadow: 0 0.5em 1em rgba(0, 179, 164, 0.3);
   }
 
   .btn-outline {
     @apply btn bg-transparent text-primary-500 border-2 border-primary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500;
   }
 
-  /* Cards */
+  /* Modern Card System with Box-Style Design */
   .card {
-    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden;
+    @apply bg-white rounded-xl overflow-hidden;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Sections */
+  .card:hover {
+    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.25em);
+  }
+
+  .card-content {
+    padding: 2em;
+  }
+
+  /* Modern Section System with Dynamic Spacing */
   .section {
-    @apply py-16 md:py-20 lg:py-24;
+    padding: clamp(4em, 8vw, 6em) 0;
   }
 
-  /* Container */
+  .section-sm {
+    padding: clamp(2em, 4vw, 3em) 0;
+  }
+
+  .section-lg {
+    padding: clamp(6em, 12vw, 8em) 0;
+  }
+
+  /* Modern Container with Fluid Spacing */
   .container-custom {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container mx-auto;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  /* Box-Style Layout Utilities */
+  .box {
+    padding: 2em;
+    margin-bottom: 2em;
+  }
+
+  .box-sm {
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
+  .box-lg {
+    padding: 3em;
+    margin-bottom: 3em;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .stack-sm {
+    gap: 0.5em;
+  }
+
+  .stack-lg {
+    gap: 2em;
+  }
+
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .cluster-sm {
+    gap: 0.5em;
+  }
+
+  .cluster-lg {
+    gap: 2em;
   }
 
   /* Skip to content link */
   .skip-link {
-    @apply absolute -top-10 left-6 bg-primary-500 text-white px-4 py-2 rounded-md z-50 transition-all duration-200;
+    @apply absolute -top-10 left-6 bg-primary-500 text-white rounded-md z-50 transition-all duration-200;
+    padding: 0.5em 1em;
   }
 
   .skip-link:focus {
     @apply top-6;
   }
 
-  /* Navigation */
+  /* Modern Navigation System */
   .nav-link {
-    @apply text-gray-700 hover:text-primary-500 transition-colors duration-200 font-medium;
+    @apply text-gray-700 hover:text-primary-500 transition-colors duration-300 font-medium;
+    padding: 0.5em 0;
   }
 
   .nav-link-active {
     @apply text-primary-500 font-semibold;
   }
 
-  /* Form elements */
+  /* Modern Form System with Box-Style Design */
   .form-input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200;
+    @apply w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300;
+    padding: 0.75em 1em;
   }
 
   .form-label {
-    @apply block text-sm font-medium text-gray-700 mb-2;
+    @apply block font-medium text-gray-700;
+    margin-bottom: 0.5em;
+    font-size: 0.875em;
   }
 
-  /* Animations */
+  .form-group {
+    margin-bottom: 1.5em;
+  }
+
+  /* Modern Animation System */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
   }
@@ -109,6 +227,48 @@
 
   .animate-slide-in-right {
     animation: slideInRight 0.6s ease-out;
+  }
+
+  /* Modern Grid System */
+  .grid-responsive {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+
+  .grid-responsive-sm {
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  }
+
+  .grid-responsive-lg {
+    gap: 3em;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  }
+
+  /* Modern Flexbox Utilities */
+  .flex-responsive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .flex-responsive-col {
+    flex-direction: column;
+  }
+
+  /* Responsive Text Utilities */
+  .text-responsive {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  }
+
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .text-responsive-lg {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
   }
 }
 
