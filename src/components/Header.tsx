@@ -17,15 +17,15 @@ export default function Header() {
         <div className="container">
           <div className="flex items-center justify-between text-small">
             <div className="flex items-center space-x-inline">
-              <a href={PHONE.href} className="flex items-center hover:text-accent-300 transition-colors">
+              <a href={PHONE.href} className="flex items-center text-white hover:text-accent-300 transition-colors">
                 <Phone className="icon-sm mr-1" />
                 {PHONE.label}
               </a>
             </div>
             <div className="hidden md:flex items-center space-x-inline-sm">
-              <span>KVDF Airport, Tampa, FL</span>
-              <span>•</span>
-              <span>FAA Part 141 & 61</span>
+              <span className="text-white">KVDF Airport, Tampa, FL</span>
+              <span className="text-white">•</span>
+              <span className="text-white">FAA Part 141 & 61</span>
             </div>
           </div>
         </div>

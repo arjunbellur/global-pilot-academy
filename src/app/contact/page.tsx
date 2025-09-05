@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
