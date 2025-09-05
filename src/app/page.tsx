@@ -36,7 +36,7 @@ const graduateSuccess = [
     company: 'Southwest Airlines',
     content: 'Global Pilot Academy gave me the skills and confidence to pursue my dream career. The instructors are exceptional and the training is world-class.',
     rating: 5,
-    image: '/images/testimonial-1.jpg'
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
   },
   {
     name: 'Michael Chen',
@@ -44,7 +44,7 @@ const graduateSuccess = [
     company: 'GPA Alumni',
     content: 'The structured approach and experienced instructors made all the difference. I went from zero flight experience to CFI in just 14 months.',
     rating: 5,
-    image: '/images/testimonial-2.jpg'
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
   },
   {
     name: 'Emily Rodriguez',
@@ -52,7 +52,7 @@ const graduateSuccess = [
     company: 'Recreational Flyer',
     content: 'Amazing experience learning to fly here. The staff is professional, the aircraft are well-maintained, and the training is comprehensive.',
     rating: 5,
-    image: '/images/testimonial-3.jpg'
+    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face'
   }
 ]
 

@@ -9,8 +9,6 @@
 /* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
 
-/* Standardized Component System */
-
 @layer base {
   html {
     scroll-behavior: smooth;
