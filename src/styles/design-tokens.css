@@ -69,17 +69,32 @@
   --font-family-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
-  /* Font Sizes - Hierarchical scale based on base body text (1rem = 16px) */
-  --font-size-xs: 0.75em;     /* 12px - Small captions */
-  --font-size-sm: 0.875em;    /* 14px - Secondary text */
-  --font-size-base: 1em;      /* 16px - Body text (reference size) */
-  --font-size-lg: 1.125em;    /* 18px - Emphasized body text */
-  --font-size-xl: 1.25em;     /* 20px - Small headings */
-  --font-size-2xl: 1.5em;     /* 24px - Subheadings */
-  --font-size-3xl: 1.875em;   /* 30px - Section headings */
-  --font-size-4xl: 2.25em;    /* 36px - Page titles */
-  --font-size-5xl: 3em;       /* 48px - Hero titles */
-  --font-size-6xl: 3.75em;    /* 60px - Display text */
+  /* Font Sizes - Following modern responsive typography guidelines */
+  /* Based on Learn UI Design recommendations: https://www.learnui.design/blog/mobile-desktop-website-font-size-guidelines.html */
+  
+  /* Mobile-first approach with responsive scaling */
+  /* Following Learn UI Design guidelines for optimal readability */
+  --font-size-xs: 0.75rem;    /* 12px - Small captions (2px smaller than default) */
+  --font-size-sm: 0.875rem;   /* 14px - Secondary text (2px smaller than default) */
+  --font-size-base: 1rem;     /* 16px - Body text (mobile standard, prevents iOS zoom) */
+  --font-size-lg: 1.125rem;   /* 18px - Emphasized body text */
+  --font-size-xl: 1.25rem;    /* 20px - Small headings */
+  --font-size-2xl: 1.5rem;    /* 24px - Subheadings */
+  --font-size-3xl: 1.875rem;  /* 30px - Section headings */
+  --font-size-4xl: 2.25rem;   /* 36px - Page titles (mobile: 28-40px) */
+  --font-size-5xl: 2.5rem;    /* 40px - Hero titles (mobile: 28-40px) */
+  --font-size-6xl: 3rem;      /* 48px - Display text (desktop: 35-50px) */
+
+  /* Responsive font sizes for desktop scaling */
+  /* Using clamp() for fluid typography that scales with viewport */
+  --font-size-base-responsive: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);  /* 16-18px */
+  --font-size-lg-responsive: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);  /* 18-20px */
+  --font-size-xl-responsive: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);    /* 20-24px */
+  --font-size-2xl-responsive: clamp(1.5rem, 1.35rem + 0.5vw, 1.875rem);  /* 24-30px */
+  --font-size-3xl-responsive: clamp(1.875rem, 1.6rem + 0.6vw, 2.25rem);  /* 30-36px */
+  --font-size-4xl-responsive: clamp(2.25rem, 1.9rem + 0.7vw, 2.75rem);   /* 36-44px */
+  --font-size-5xl-responsive: clamp(2.5rem, 2.2rem + 0.8vw, 3rem);       /* 40-48px */
+  --font-size-6xl-responsive: clamp(3rem, 2.4rem + 0.9vw, 3.5rem);       /* 48-56px */
 
   /* Font Weights */
   --font-weight-light: 300;

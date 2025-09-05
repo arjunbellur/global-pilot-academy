@@ -52,44 +52,45 @@
      STANDARDIZED COMPONENT SYSTEM
      ======================================== */
   
-  /* Typography - Hierarchical scale based on body text */
+  /* Typography - Following Learn UI Design guidelines */
+  /* Using responsive font sizes for optimal mobile and desktop experience */
   .text-display {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-6xl-responsive);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
     color: var(--color-gray-900);
   }
 
   .text-hero {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-5xl-responsive);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
     color: var(--color-gray-900);
   }
 
   .text-heading {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-3xl-responsive);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-tight);
     color: var(--color-gray-900);
   }
 
   .text-subheading {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-2xl-responsive);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-snug);
     color: var(--color-gray-800);
   }
 
   .text-body {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-base-responsive);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-relaxed);
     color: var(--color-gray-700);
   }
 
   .text-body-lg {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-lg-responsive);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-relaxed);
     color: var(--color-gray-700);
@@ -129,13 +130,13 @@
   }
 
   .btn-md {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-base-responsive);
     padding: var(--space-sm) var(--space-md);
     min-height: var(--btn-height-md);
   }
 
   .btn-lg {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-lg-responsive);
     padding: var(--space-sm) var(--space-lg);
     min-height: var(--btn-height-lg);
   }
