@@ -44,8 +44,8 @@ export default function Header() {
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
-        : 'bg-white'
+        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
+        : 'bg-transparent'
     }`}>
       {/* Top bar with contact info */}
       <div className="bg-primary-600 text-white" style={{ padding: '0.375em 0' }}>
@@ -87,8 +87,8 @@ export default function Header() {
               <span className="text-white font-bold text-base">GPA</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900" style={{ marginBottom: '0.25em' }}>Global Pilot Academy</h1>
-              <p className="text-sm text-gray-600">Professional Flight Training</p>
+              <h1 className="text-xl font-bold text-white" style={{ marginBottom: '0.25em' }}>Global Pilot Academy</h1>
+              <p className="text-sm text-gray-200">Professional Flight Training</p>
             </div>
           </Link>
 
@@ -98,10 +98,11 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="nav-link relative group"
+                className="text-white hover:text-accent-300 transition-colors duration-300 font-medium relative group"
+                style={{ padding: '0.5em 0', fontSize: '0.875rem' }}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-300 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
@@ -119,7 +120,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden rounded-md text-gray-700 hover:text-primary-500 hover:bg-gray-100 transition-colors duration-300"
+            className="lg:hidden rounded-md text-white hover:text-accent-300 hover:bg-white/10 transition-colors duration-300"
             style={{ padding: '0.5em' }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
@@ -134,7 +135,7 @@ export default function Header() {
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200" style={{ marginTop: '0.75em', paddingBottom: '0.75em' }}>
+          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg" style={{ marginTop: '0.75em', paddingBottom: '0.75em' }}>
             <div className="stack" style={{ paddingTop: '0.75em' }}>
               {fullNavigation.map((item) => (
                 <Link

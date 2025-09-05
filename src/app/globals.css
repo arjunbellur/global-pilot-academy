@@ -96,14 +96,14 @@
   .p {
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
-    color: var(--color-gray-700);
+    color: var(--color-gray-800);
     margin-bottom: var(--space-md);
   }
 
   .p-sm {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-relaxed);
-    color: var(--color-gray-600);
+    color: var(--color-gray-700);
     margin-bottom: calc(var(--space-md) * 0.8);
   }
 
@@ -319,7 +319,7 @@
 
   /* Standardized Navigation System using Design Tokens */
   .nav-link {
-    color: var(--color-gray-700);
+    color: var(--color-gray-800);
     transition: color var(--duration-normal) var(--ease-in-out);
     font-weight: var(--font-weight-medium);
     padding: var(--space-sm) 0;
@@ -334,6 +334,20 @@
   .nav-link-active {
     color: var(--color-primary-500);
     font-weight: var(--font-weight-semibold);
+  }
+
+  /* Navigation for transparent header */
+  .nav-link-transparent {
+    color: white;
+    transition: color var(--duration-normal) var(--ease-in-out);
+    font-weight: var(--font-weight-medium);
+    padding: var(--space-sm) 0;
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+  }
+
+  .nav-link-transparent:hover {
+    color: var(--color-accent-300);
   }
 
   /* Standardized Form System using Design Tokens */

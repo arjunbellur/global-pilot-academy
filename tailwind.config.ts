@@ -163,6 +163,7 @@ const config: Config = {
       
       // Z-Index Scale
       zIndex: {
+        'base': 'var(--z-base)',
         'dropdown': 'var(--z-dropdown)',
         'sticky': 'var(--z-sticky)',
         'fixed': 'var(--z-fixed)',
@@ -171,6 +172,7 @@ const config: Config = {
         'popover': 'var(--z-popover)',
         'tooltip': 'var(--z-tooltip)',
         'toast': 'var(--z-toast)',
+        'maximum': 'var(--z-maximum)',
       },
       
       // Custom Animations

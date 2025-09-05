@@ -42,17 +42,17 @@
   --color-accent-800: #115e59;
   --color-accent-900: #134e4a;
 
-  /* Neutral Grays */
+  /* Neutral Grays - Enhanced contrast for better readability */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
   --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
+  --color-gray-400: #6b7280;  /* Darker for better contrast */
+  --color-gray-500: #4b5563;  /* Darker for better contrast */
+  --color-gray-600: #374151;  /* Darker for better contrast */
+  --color-gray-700: #1f2937;  /* Darker for better contrast */
+  --color-gray-800: #111827;  /* Darker for better contrast */
+  --color-gray-900: #0f172a;  /* Darker for better contrast */
 
   /* Semantic Colors */
   --color-success: #10b981;
@@ -69,17 +69,17 @@
   --font-family-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
-  /* Font Sizes - Fluid Typography */
-  --font-size-xs: clamp(0.75rem, 0.7rem + 0.15vw, 0.875rem);    /* 12-14px */
-  --font-size-sm: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);        /* 14-16px */
-  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);    /* 16-18px */
-  --font-size-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);    /* 18-20px */
-  --font-size-xl: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);      /* 20-24px */
-  --font-size-2xl: clamp(1.5rem, 1.35rem + 0.5vw, 1.875rem);    /* 24-30px */
-  --font-size-3xl: clamp(1.875rem, 1.6rem + 0.6vw, 2.25rem);    /* 30-36px */
-  --font-size-4xl: clamp(2.25rem, 1.9rem + 0.7vw, 2.75rem);     /* 36-44px */
-  --font-size-5xl: clamp(3rem, 2.4rem + 0.8vw, 3.5rem);         /* 48-56px */
-  --font-size-6xl: clamp(3.75rem, 3rem + 0.9vw, 4rem);          /* 60-64px */
+  /* Font Sizes - Enhanced Fluid Typography for better readability */
+  --font-size-xs: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);        /* 14-16px */
+  --font-size-sm: clamp(1rem, 0.9rem + 0.25vw, 1.125rem);       /* 16-18px */
+  --font-size-base: clamp(1.125rem, 1rem + 0.3vw, 1.25rem);     /* 18-20px */
+  --font-size-lg: clamp(1.25rem, 1.1rem + 0.4vw, 1.5rem);       /* 20-24px */
+  --font-size-xl: clamp(1.5rem, 1.3rem + 0.5vw, 1.875rem);      /* 24-30px */
+  --font-size-2xl: clamp(1.875rem, 1.5rem + 0.6vw, 2.25rem);    /* 30-36px */
+  --font-size-3xl: clamp(2.25rem, 1.8rem + 0.7vw, 2.75rem);     /* 36-44px */
+  --font-size-4xl: clamp(2.75rem, 2.2rem + 0.8vw, 3.5rem);      /* 44-56px */
+  --font-size-5xl: clamp(3.5rem, 2.8rem + 1vw, 4.5rem);         /* 56-72px */
+  --font-size-6xl: clamp(4.5rem, 3.5rem + 1.2vw, 5.5rem);       /* 72-88px */
 
   /* Font Weights */
   --font-weight-light: 300;
@@ -192,9 +192,10 @@
   --breakpoint-2xl: 1536px;
 
   /* ========================================
-     Z-INDEX SCALE
+     Z-INDEX SCALE - Enhanced layering
      ======================================== */
   
+  --z-base: 0;
   --z-dropdown: 1000;
   --z-sticky: 1020;
   --z-fixed: 1030;
@@ -203,6 +204,7 @@
   --z-popover: 1060;
   --z-tooltip: 1070;
   --z-toast: 1080;
+  --z-maximum: 9999;
 
   /* ========================================
      FOCUS STYLES
