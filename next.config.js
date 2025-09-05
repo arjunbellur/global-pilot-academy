@@ -14,7 +14,6 @@ const nextConfig = {
   experimental: {
     // Use minimal experimental features
     webpackBuildWorker: false,
-    buildTraces: false,
   },
 }
 

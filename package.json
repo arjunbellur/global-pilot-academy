@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "cf:build": "npx @cloudflare/next-on-pages@1 build",
+    "cf:build": "npx @cloudflare/next-on-pages@1",
     "cf:deploy": "npm run cf:build && npx wrangler pages deploy .vercel/output/static",
     "cf:dev": "npx wrangler pages dev .vercel/output/static",
     "cf:preview": "npm run cf:build && npm run cf:dev",
