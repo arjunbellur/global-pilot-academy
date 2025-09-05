@@ -84,9 +84,9 @@ export default function StyleGuidePage() {
             <div className="card">
               <div className="card-body">
                 <div className="w-full h-20 bg-primary-500 rounded-lg mb-4"></div>
-                <h3 className="text-subheading">Primary Blue</h3>
-                <p className="text-caption text-gray-600">#1c3faa</p>
-                <code className="text-small">primary-500</code>
+                <h3 className="text-subheading text-white">Primary Blue</h3>
+                <p className="text-caption text-white">#1c3faa</p>
+                <code className="text-small text-white">primary-500</code>
               </div>
             </div>
 
