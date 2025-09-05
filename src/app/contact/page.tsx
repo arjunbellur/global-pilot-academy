@@ -339,7 +339,7 @@ export default function ContactPage() {
       <section className="section-sm bg-primary-600 text-white">
         <div className="container-custom text-center">
           <h2 className="h2 mb-6">Ready to Start Flying?</h2>
-          <p className="p text-xl mb-8 max-w-3xl mx-auto text-primary-100">
+          <p className="p text-xl mb-8 max-w-3xl mx-auto text-white">
             Take the next step in your aviation journey today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
