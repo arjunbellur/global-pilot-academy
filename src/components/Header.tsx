@@ -2,22 +2,34 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
-
-// Navigation items
-const navigation = [
-  { name: 'Programs', href: '/programs' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Fleet', href: '/fleet' },
-  { name: 'Enroll', href: '/enroll' },
-  { name: 'FAQ', href: '/faq' },
-]
+import { Menu, X, ChevronDown, Phone } from 'lucide-react'
+import { NAV, PRIMARY_CTA, PHONE } from '../data/nav'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null)
 
   return (
     <header className="static bg-white/95 backdrop-blur-sm border-b border-gray-200">
+
+      {/* Top phone bar */}
+      <div className="bg-primary-600 text-white py-2">
+        <div className="container">
+          <div className="flex items-center justify-between text-small">
+            <div className="flex items-center space-x-inline">
+              <a href={PHONE.href} className="flex items-center hover:text-accent-300 transition-colors">
+                <Phone className="icon-sm mr-1" />
+                {PHONE.label}
+              </a>
+            </div>
+            <div className="hidden md:flex items-center space-x-inline-sm">
+              <span>KVDF Airport, Tampa, FL</span>
+              <span>•</span>
+              <span>FAA Part 141 & 61</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Main navigation */}
       <nav className="container py-3">
@@ -35,24 +47,49 @@ export default function Header() {
 
           {/* Desktop navigation */}
           <div className="hidden lg:flex items-center space-x-inline">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="nav-link"
-              >
-                {item.name}
-              </Link>
+            {NAV.map((item) => (
+              <div key={item.label} className="relative">
+                {item.children ? (
+                  <button
+                    className="nav-link flex items-center"
+                    onMouseEnter={() => setDropdownOpen(item.label)}
+                    onMouseLeave={() => setDropdownOpen(null)}
+                  >
+                    {item.label}
+                    <ChevronDown className="icon-sm ml-1" />
+                  </button>
+                ) : (
+                  <Link href={item.href!} className="nav-link">
+                    {item.label}
+                  </Link>
+                )}
+
+                {/* Dropdown */}
+                {item.children && dropdownOpen === item.label && (
+                  <div
+                    className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50"
+                    onMouseEnter={() => setDropdownOpen(item.label)}
+                    onMouseLeave={() => setDropdownOpen(null)}
+                  >
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href!}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-500 transition-colors"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
           {/* CTA buttons */}
           <div className="hidden lg:flex items-center space-x-inline-sm">
-            <Link href="/discovery" className="btn btn-sm btn-outline">
-              Book Discovery Flight
-            </Link>
-            <Link href="/tour" className="btn btn-sm btn-outline">
-              Schedule Tour
+            <Link href={PRIMARY_CTA.href} className="btn btn-sm btn-primary">
+              {PRIMARY_CTA.label}
             </Link>
           </div>
 
@@ -68,32 +105,72 @@ export default function Header() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="pt-4 space-y-stack">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="nav-link block py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
+          <div className="lg:hidden fixed inset-0 top-0 z-40 bg-white">
+            <div className="flex flex-col h-full">
+              {/* Mobile header */}
+              <div className="flex items-center justify-between p-4 border-b border-gray-200">
+                <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                  <div className="bg-gray-900 rounded-lg w-10 h-10 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">GPA</span>
+                  </div>
+                  <div className="ml-3">
+                    <h1 className="text-heading">Global Pilot Academy</h1>
+                  </div>
                 </Link>
-              ))}
-              <div className="pt-4 space-y-stack-sm">
-                <Link
-                  href="/discovery"
-                  className="btn btn-sm btn-primary w-full text-center"
+                <button
+                  type="button"
+                  className="p-2 text-gray-700 hover:text-primary-500 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Book Discovery Flight
-                </Link>
+                  <X className="icon-lg" />
+                </button>
+              </div>
+
+              {/* Mobile navigation */}
+              <div className="flex-1 overflow-y-auto px-4 py-6">
+                <nav className="space-y-stack">
+                  {NAV.map((item) => (
+                    <div key={item.label}>
+                      {item.children ? (
+                        <div>
+                          <div className="font-semibold text-lg text-gray-900 py-2">
+                            {item.label}
+                          </div>
+                          <div className="ml-4 space-y-2">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.href}
+                                href={child.href!}
+                                className="block py-2 text-gray-700 hover:text-primary-500 transition-colors"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {child.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href!}
+                          className="block py-2 text-lg font-semibold text-gray-900 hover:text-primary-500 transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Mobile CTA */}
+              <div className="p-4 border-t border-gray-200">
                 <Link
-                  href="/tour"
-                  className="btn btn-sm btn-outline w-full text-center"
+                  href={PRIMARY_CTA.href}
+                  className="btn btn-lg btn-primary w-full text-center"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Schedule Tour
+                  {PRIMARY_CTA.label}
                 </Link>
               </div>
             </div>
