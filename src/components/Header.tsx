@@ -107,7 +107,7 @@ export default function Header() {
                 className={`text-sm font-medium relative group transition-colors duration-300 ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary-500' 
-                    : 'text-white hover:text-accent-300 drop-shadow-sm'
+                    : 'text-white hover:text-accent-300 drop-shadow-lg bg-black/20 px-2 py-1 rounded'
                 }`}
               >
                 {item.name}
