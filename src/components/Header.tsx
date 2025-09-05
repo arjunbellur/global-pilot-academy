@@ -17,8 +17,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-      {/* Top contact bar */}
+    <>
+      {/* Top contact bar - separate from fixed header */}
       <div className="bg-primary-600 text-white py-2">
         <div className="container">
           <div className="flex items-center justify-between text-small text-white">
@@ -40,6 +40,8 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
 
       {/* Main navigation */}
       <nav className="container py-3">
@@ -122,6 +124,7 @@ export default function Header() {
           </div>
         )}
       </nav>
-    </header>
+      </header>
+    </>
   )
 }
