@@ -19,8 +19,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Column 1: Contact Information */}
           <div className="space-y-4">
-            <div className="flex items-start space-x-3">
-              <div className="bg-primary-500 rounded-lg w-12 h-12 flex items-center justify-center flex-shrink-0">
+            <div className="space-y-3">
+              <div className="bg-primary-500 rounded-lg w-12 h-12 flex items-center justify-center">
                 <span className="text-white font-bold text-sm">GPA</span>
               </div>
               <div>
