@@ -94,21 +94,21 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-10 container-custom text-center text-white px-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 animate-fade-in">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 animate-fade-in">
             Become a Pilot in Tampa (KVDF).
           </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-100 mb-8 animate-slide-up">
+          <p className="text-base md:text-lg max-w-3xl mx-auto text-gray-100 mb-8 animate-slide-up">
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up">
-            <Link href="/enroll" className="btn-primary text-lg px-8 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up">
+            <Link href="/enroll" className="btn-primary text-base px-6 py-3">
               Enroll
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
+            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-base px-6 py-3">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
+            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-base px-6 py-3">
               Schedule Tour
             </Link>
           </div>

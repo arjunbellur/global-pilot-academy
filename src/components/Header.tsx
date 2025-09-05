@@ -119,11 +119,11 @@ export default function Header() {
           </div>
 
           {/* Sticky CTAs */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link href="/discovery" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-sm px-4 py-2">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4">
+            <Link href="/tour" className="btn-outline border-white text-white hover:bg-white hover:text-gray-900 text-sm px-4 py-2">
               Schedule Tour
             </Link>
           </div>
@@ -165,7 +165,7 @@ export default function Header() {
               <div className="border-t border-gray-200 stack" style={{ paddingTop: '0.75em' }}>
                 <Link
                   href="/discovery"
-                  className="btn-primary text-center text-lg px-8 py-4"
+                  className="btn-primary text-center text-sm px-4 py-2"
                   style={{ margin: '0 0.75em' }}
                   onClick={closeMobileMenu}
                 >
@@ -173,7 +173,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/tour"
-                  className="btn-outline text-center text-lg px-8 py-4"
+                  className="btn-outline text-center text-sm px-4 py-2"
                   style={{ margin: '0 0.75em' }}
                   onClick={closeMobileMenu}
                 >
