@@ -37,11 +37,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="bg-gray-900 rounded-lg w-10 h-10 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">GPA</span>
+              <span className="text-white font-bold text-xs">GPA</span>
             </div>
             <div className="hidden sm:block ml-3">
-              <h1 className="text-heading">Global Pilot Academy</h1>
-              <p className="text-small">Professional Flight Training</p>
+              <h1 className="text-subheading">Global Pilot Academy</h1>
+              <p className="text-caption">Professional Flight Training</p>
             </div>
           </Link>
 

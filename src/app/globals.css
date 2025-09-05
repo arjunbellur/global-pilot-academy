@@ -52,23 +52,30 @@
      STANDARDIZED COMPONENT SYSTEM
      ======================================== */
   
-  /* Typography - Simplified and consistent */
+  /* Typography - Hierarchical scale based on body text */
   .text-display {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-gray-900);
+  }
+
+  .text-hero {
+    font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
     color: var(--color-gray-900);
   }
 
   .text-heading {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-tight);
     color: var(--color-gray-900);
   }
 
   .text-subheading {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-snug);
     color: var(--color-gray-800);
@@ -76,6 +83,13 @@
 
   .text-body {
     font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-700);
+  }
+
+  .text-body-lg {
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-relaxed);
     color: var(--color-gray-700);
@@ -110,20 +124,20 @@
 
   .btn-sm {
     font-size: var(--font-size-sm);
-    padding: var(--space-sm) var(--space-md);
-    min-height: 2rem;
+    padding: var(--space-xs) var(--space-sm);
+    min-height: var(--btn-height-sm);
   }
 
   .btn-md {
     font-size: var(--font-size-base);
-    padding: var(--space-sm) var(--space-lg);
-    min-height: 2.5rem;
+    padding: var(--space-sm) var(--space-md);
+    min-height: var(--btn-height-md);
   }
 
   .btn-lg {
     font-size: var(--font-size-lg);
-    padding: var(--space-md) var(--space-xl);
-    min-height: 3rem;
+    padding: var(--space-sm) var(--space-lg);
+    min-height: var(--btn-height-lg);
   }
 
   .btn-primary {
@@ -192,13 +206,29 @@
     padding: var(--space-3xl) 0;
   }
 
-  /* Spacing - Simplified */
+  /* Spacing - Consistent design token usage */
   .space-y-stack > * + * {
     margin-top: var(--space-md);
   }
 
   .space-y-stack-sm > * + * {
     margin-top: var(--space-sm);
+  }
+
+  .space-y-stack-lg > * + * {
+    margin-top: var(--space-lg);
+  }
+
+  .space-x-inline > * + * {
+    margin-left: var(--space-md);
+  }
+
+  .space-x-inline-sm > * + * {
+    margin-left: var(--space-sm);
+  }
+
+  .space-x-inline-lg > * + * {
+    margin-left: var(--space-lg);
   }
 
   .space-y-stack-lg > * + * {

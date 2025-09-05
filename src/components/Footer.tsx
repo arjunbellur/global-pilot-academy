@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="space-y-stack">
             <div className="flex items-center space-x-inline">
               <div className="bg-primary-500 rounded-lg w-10 h-10 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">GPA</span>
+                <span className="text-white font-bold text-xs">GPA</span>
               </div>
               <div>
                 <h3 className="text-subheading text-white">Global Pilot Academy</h3>

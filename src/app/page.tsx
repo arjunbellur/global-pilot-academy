@@ -93,21 +93,21 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-10 container text-center text-white px-4 max-w-4xl">
-          <h1 className="text-display mb-4 leading-tight">
+          <h1 className="text-hero mb-4 leading-tight">
             Become a Pilot in Tampa (KVDF).
           </h1>
-          <p className="text-body max-w-3xl mx-auto mb-6 text-lg leading-relaxed">
+          <p className="text-body-lg max-w-3xl mx-auto mb-6">
             Structured, hands-on training from <strong>Private Pilot to Airline Track</strong> with proven graduate success.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <Link href="/enroll" className="btn btn-md btn-primary px-6 py-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/enroll" className="btn btn-md btn-primary">
               Enroll Now
               <ArrowRight className="icon-sm ml-2" />
             </Link>
-            <Link href="/discovery" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3">
+            <Link href="/discovery" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Book Discovery Flight
             </Link>
-            <Link href="/tour" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3">
+            <Link href="/tour" className="btn btn-md btn-outline border-white text-white hover:bg-white hover:text-gray-900">
               Schedule Tour
             </Link>
           </div>
