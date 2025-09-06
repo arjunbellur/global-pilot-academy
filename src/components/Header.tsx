@@ -67,20 +67,22 @@ export default function Header() {
                 {/* Dropdown */}
                 {item.children && dropdownOpen === item.label && (
                   <div
-                    className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2"
-                    style={{ zIndex: 1000 }}
+                    className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg py-3"
+                    style={{ zIndex: 1000, minWidth: 'max-content' }}
                     onMouseEnter={() => setDropdownOpen(item.label)}
                     onMouseLeave={() => setDropdownOpen(null)}
                   >
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href!}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-500 transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-1 px-4">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href!}
+                          className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-500 transition-colors rounded whitespace-nowrap"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

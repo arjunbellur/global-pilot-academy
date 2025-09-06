@@ -361,6 +361,115 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Location & Contact Section */}
+      <section id="location-contact" className="section-lg bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="h2 mb-4">Visit Our Flight School</h2>
+            <p className="p text-xl text-gray-700 max-w-3xl mx-auto">
+              Located at Tampa Executive Airport (KVDF), we provide convenient access to world-class flight training facilities.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Location Information */}
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="h3 mb-4">Location Details</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <span className="text-primary-600 text-sm">📍</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Tampa Executive Airport (KVDF)</p>
+                      <p className="text-gray-600">12345 Aviation Blvd, Tampa, FL 33610</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <span className="text-primary-600 text-sm">✈️</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Airport Code: KVDF</p>
+                      <p className="text-gray-600">FAA Part 141 & 61 Certified</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <span className="text-primary-600 text-sm">🕒</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Operating Hours</p>
+                      <p className="text-gray-600">Monday - Friday: 7:00 AM - 7:00 PM</p>
+                      <p className="text-gray-600">Saturday: 8:00 AM - 5:00 PM</p>
+                      <p className="text-gray-600">Sunday: 9:00 AM - 4:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="h3 mb-4">Contact Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-primary-600">📞</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Phone</p>
+                      <a href="tel:+18136004052" className="text-primary-600 hover:text-primary-700">
+                        (813) 600-4052
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-primary-600">✉️</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Email</p>
+                      <a href="mailto:info@gpapilot.com" className="text-primary-600 hover:text-primary-700">
+                        info@gpapilot.com
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-primary-600">🌐</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Website</p>
+                      <a href="https://www.gpapilot.com" className="text-primary-600 hover:text-primary-700">
+                        www.gpapilot.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="h3 mb-4">Quick Actions</h3>
+                <div className="space-y-3">
+                  <Link href="/enroll" className="block w-full btn btn-primary text-center">
+                    Start Your Training
+                  </Link>
+                  <Link href="/discovery" className="block w-full btn btn-outline text-center">
+                    Schedule Discovery Flight
+                  </Link>
+                  <Link href="/contact" className="block w-full btn btn-outline text-center">
+                    Request Information
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-lg bg-white">
         <div className="container-custom text-center">

@@ -25,19 +25,26 @@ export const NAV: NavItem[] = [
       { label: "International Students", href: "/international" }
     ]
   },
-  { label: "Locations", href: "/locations" },
-  { label: "Fleet", href: "/fleet" },
   {
-    label: "Career Guide",
+    label: "About",
     children: [
+      { label: "Our Story", href: "/about" },
+      { label: "Location & Contact", href: "/about#location-contact" },
+      { label: "Fleet", href: "/fleet" },
+      { label: "Reviews", href: "/reviews" }
+    ]
+  },
+  {
+    label: "Resources",
+    children: [
+      { label: "Career Guide", href: "/guide" },
       { label: "How Long to Become a Pilot", href: "/guide/how-long" },
       { label: "Pilot Requirements", href: "/guide/requirements" },
       { label: "Pilot Salary & Hiring", href: "/guide/salary" },
-      { label: "Steps to Become a Pilot", href: "/guide/steps" }
+      { label: "Steps to Become a Pilot", href: "/guide/steps" },
+      { label: "FAQs", href: "/faq" }
     ]
-  },
-  { label: "Reviews", href: "/reviews" },
-  { label: "Contact", href: "/contact" }
+  }
 ];
 
 // Header CTAs
@@ -63,14 +70,18 @@ export const FOOTER_NAV = {
     { label: "Housing", href: "/admissions/housing" },
     { label: "International Students", href: "/international" }
   ],
-  resources: [
-    { label: "Career Guide", href: "/guide" },
-    { label: "FAQs", href: "/faq" },
+  about: [
+    { label: "Our Story", href: "/about" },
+    { label: "Location & Contact", href: "/about#location-contact" },
+    { label: "Fleet", href: "/fleet" },
     { label: "Reviews", href: "/reviews" }
   ],
-  about: [
-    { label: "Locations", href: "/locations" },
-    { label: "Fleet", href: "/fleet" },
-    { label: "Contact", href: "/contact" }
+  resources: [
+    { label: "Career Guide", href: "/guide" },
+    { label: "How Long to Become a Pilot", href: "/guide/how-long" },
+    { label: "Pilot Requirements", href: "/guide/requirements" },
+    { label: "Pilot Salary & Hiring", href: "/guide/salary" },
+    { label: "Steps to Become a Pilot", href: "/guide/steps" },
+    { label: "FAQs", href: "/faq" }
   ]
 };
