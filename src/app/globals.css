@@ -22,6 +22,16 @@
     line-height: var(--line-height-relaxed);
   }
 
+  /* Heading fonts - DM Sans */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', 'Futura', 'Futura PT', 'Futura Std', 'Roboto', system-ui, sans-serif;
+  }
+
+  /* Body text - Urbanist */
+  p, span, div, a, li, td, th, label, input, textarea, select, button {
+    font-family: 'Urbanist', 'Futura', 'Futura PT', 'Futura Std', 'Roboto', system-ui, sans-serif;
+  }
+
   * {
     box-sizing: border-box;
   }

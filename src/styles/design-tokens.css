@@ -65,8 +65,8 @@
      ======================================== */
   
   /* Font Families */
-  --font-family-sans: 'Futura', 'Futura PT', 'Futura Std', Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-family-display: 'Futura', 'Futura PT', 'Futura Std', Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-sans: 'Urbanist', 'Futura', 'Futura PT', 'Futura Std', Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-display: 'DM Sans', 'Futura', 'Futura PT', 'Futura Std', Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
   /* Font Sizes - Following modern responsive typography guidelines */

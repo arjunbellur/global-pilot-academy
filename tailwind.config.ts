@@ -61,6 +61,8 @@ const config: Config = {
         sans: ['var(--font-family-sans)'],
         display: ['var(--font-family-display)'],
         mono: ['var(--font-family-mono)'],
+        heading: ['DM Sans', 'Futura', 'Futura PT', 'Futura Std', 'Roboto', 'system-ui', 'sans-serif'],
+        body: ['Urbanist', 'Futura', 'Futura PT', 'Futura Std', 'Roboto', 'system-ui', 'sans-serif'],
       },
       
       fontSize: {
