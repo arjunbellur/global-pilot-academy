@@ -145,7 +145,7 @@ export default function ProgramOverviewPage() {
             {[
               {value:'FAA Pt. 141 & 61',label:'Certification'},
               {value:'In-House DPE',label:'Checkride Authority'},
-              {value:'17+ Aircraft',label:'IFR-equipped fleet'},
+              {value:'22 Aircraft',label:'IFR-equipped fleet'},
               {value:'I-20 Auth.',label:'International Students'},
             ].map(s => (
               <div key={s.label} style={{borderRight:'1px solid rgba(255,255,255,0.1)'}}>

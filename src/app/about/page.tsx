@@ -5,7 +5,7 @@ import Link from 'next/link'
 const STATS = [
   { value: '2020', label: 'Founded' },
   { value: 'KVDF', label: 'Tampa Executive Airport' },
-  { value: '19+', label: 'Aircraft in Fleet' },
+  { value: '22', label: 'Aircraft in Fleet' },
   { value: 'Pt. 141 & 61', label: 'FAA Certified' },
   { value: 'In-House DPE', label: 'Checkride Authority' },
   { value: 'I-20 Auth.', label: 'International Students' },
@@ -14,7 +14,7 @@ const STATS = [
 const WHY_GPA = [
   {
     title: 'Largest Fleet in Tampa Bay',
-    desc: '19+ aircraft, all IFR equipped with Garmin avionics and maintained by our in-house mechanics.',
+    desc: '22 aircraft, all IFR equipped with Garmin avionics and maintained by our in-house mechanics.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0011 2a1.5 1.5 0 00-1.5 1.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#506db2"/>

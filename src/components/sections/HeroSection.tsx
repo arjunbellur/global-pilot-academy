@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 const STATS = [
-  { value: '19',       label: 'Training Aircraft' },
+  { value: '22',       label: 'Training Aircraft' },
   { value: 'Part 141', label: 'FAA Certified' },
   { value: '12-14 mo', label: 'Months to CFI' },
   { value: 'KVDF',     label: 'Tampa Executive' },
@@ -120,7 +120,7 @@ export default function HeroSection() {
               From your first discovery flight to airline placement — structured,
               hands-on training with{' '}
               <strong style={{ color: '#fff' }}>fuel included</strong> across our
-              19-aircraft fleet.
+              22-aircraft fleet.
             </p>
 
             {/* CTAs */}
