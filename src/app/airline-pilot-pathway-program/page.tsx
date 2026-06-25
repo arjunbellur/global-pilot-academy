@@ -1,8 +1,10 @@
+'use client'
+
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Link from 'next/link'
+import { useState } from 'react'
 
-// Requirements grid — 4 items from Webflow nodes
 const REQUIREMENTS = [
   {
     icon: (
@@ -11,7 +13,7 @@ const REQUIREMENTS = [
       </svg>
     ),
     heading: 'Licensure',
-    text: 'Hold a commercial pilot license.',
+    text: 'Hold a Commercial Pilot License.',
   },
   {
     icon: (
@@ -20,7 +22,7 @@ const REQUIREMENTS = [
       </svg>
     ),
     heading: 'Age',
-    text: 'Be at least 21 years of age.',
+    text: 'Be at least 21 years of age to hold the ATP certificate. You may begin program training as early as age 17.',
   },
   {
     icon: (
@@ -29,7 +31,7 @@ const REQUIREMENTS = [
       </svg>
     ),
     heading: 'Flying Time',
-    text: 'Have 1,500 hours of flying experience.',
+    text: 'Have 1,500 hours of total flight time.',
   },
   {
     icon: (
@@ -39,11 +41,40 @@ const REQUIREMENTS = [
       </svg>
     ),
     heading: 'Medical',
-    text: 'Have a First Class medical certificate.',
+    text: 'Hold a First Class medical certificate.',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18ZM12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="#506db2"/>
+      </svg>
+    ),
+    heading: 'ATP CTP',
+    text: 'Pass the Airline Transport Pilot Certification Training Program.',
+  },
+]
+
+const STEPS = [
+  {
+    step: '01',
+    title: 'Get a First Class Medical',
+    desc: 'Schedule with an FAA-authorized Aviation Medical Examiner before beginning training. A First Class medical is required to exercise ATP privileges.',
+  },
+  {
+    step: '02',
+    title: 'Enroll in the Airline Pilot Program',
+    desc: 'Complete the full GPA curriculum: Private Pilot → Instrument Rating → Commercial Pilot (ASEL/AMEL) → CFI → CFI-I. You can start as young as 17.',
+  },
+  {
+    step: '03',
+    title: 'Join the GPA Instructor Team',
+    desc: 'GPA graduates receive hiring priority. Instruct at GPA for approximately 14 months to build toward the 1,500-hour ATP minimum. Hiring is based on availability and not guaranteed.',
   },
 ]
 
 export default function AirlinePilotPathwayPage() {
+  const [activeTab, setActiveTab] = useState<'requirements' | 'steps'>('requirements')
+
   return (
     <>
       <Navbar />
@@ -73,35 +104,71 @@ export default function AirlinePilotPathwayPage() {
           />
         </div>
 
-        {/* Program info — "Your Path to the Skies" */}
+        {/* Program info */}
         <div className="appp-information-section" style={{maxWidth:'1200px',margin:'0 auto'}}>
           <div style={{display:'flex',flexDirection:'column',gap:'1em',marginBottom:'3em'}}>
             <h3 className="heading-3m">Your Path to the Skies</h3>
             <p className="text-block-5" style={{fontSize:'1.2em',fontWeight:300,maxWidth:'700px',lineHeight:1.6}}>
-              Launch your airline career through our <strong>Airline Pathway Program</strong> with guided DGCA exams, flight training, and conversion support.
+              Launch your airline career through our <strong>Airline Pathway Program</strong> with guided training, flight hours, and airline placement support.
             </p>
           </div>
 
-          {/* Requirements / Steps tabs */}
-          <div style={{display:'flex',gap:'2em',marginBottom:'2em',borderBottom:'1px solid #000040',paddingBottom:'1em'}}>
-            <div style={{fontSize:'1em',fontWeight:600,color:'#000040',borderBottom:'2px solid #000040',paddingBottom:'0.5em'}}>Requirements</div>
-            <div style={{fontSize:'1em',fontWeight:400,color:'#506db2'}}>Steps</div>
-          </div>
-
-          {/* 4 requirement cards from Webflow nodes */}
-          <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:'2em',marginBottom:'4em'}}>
-            {REQUIREMENTS.map(r => (
-              <div key={r.heading} className="feature-card" style={{display:'flex',flexDirection:'column',gap:'1em',border:'0.5px solid #d5d9e2',borderRadius:'16px',padding:'2em 1em',boxShadow:'0 1px 2px rgba(35,39,46,0.08)'}}>
-                <div style={{display:'flex',alignItems:'center',gap:'0.75em'}}>
-                  <div style={{width:'2.5em',height:'2.5em',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                    {r.icon}
-                  </div>
-                  <h4 className="heading-4n" style={{margin:0}}>{r.heading}</h4>
-                </div>
-                <p className="paragraph" style={{margin:0}}>{r.text}</p>
-              </div>
+          {/* Tabs */}
+          <div style={{display:'flex',gap:'0',marginBottom:'2em',borderBottom:'2px solid #eaecf0'}}>
+            {(['requirements','steps'] as const).map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                style={{
+                  background:'none',
+                  border:'none',
+                  cursor:'pointer',
+                  padding:'0.75em 1.75em',
+                  fontSize:'1em',
+                  fontWeight: activeTab === tab ? 600 : 400,
+                  color: activeTab === tab ? '#000040' : '#506db2',
+                  borderBottom: activeTab === tab ? '2px solid #000040' : '2px solid transparent',
+                  marginBottom:'-2px',
+                  transition:'color 0.15s, border-color 0.15s',
+                  textTransform:'capitalize',
+                }}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
             ))}
           </div>
+
+          {/* Requirements tab */}
+          {activeTab === 'requirements' && (
+            <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:'2em',marginBottom:'4em'}}>
+              {REQUIREMENTS.map(r => (
+                <div key={r.heading} className="feature-card" style={{display:'flex',flexDirection:'column',gap:'1em',border:'0.5px solid #d5d9e2',borderRadius:'16px',padding:'2em 1em',boxShadow:'0 1px 2px rgba(35,39,46,0.08)'}}>
+                  <div style={{display:'flex',alignItems:'center',gap:'0.75em'}}>
+                    <div style={{width:'2.5em',height:'2.5em',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                      {r.icon}
+                    </div>
+                    <h4 className="heading-4n" style={{margin:0}}>{r.heading}</h4>
+                  </div>
+                  <p className="paragraph" style={{margin:0}}>{r.text}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Steps tab */}
+          {activeTab === 'steps' && (
+            <div style={{display:'flex',flexDirection:'column',gap:'1em',marginBottom:'4em'}}>
+              {STEPS.map(s => (
+                <div key={s.step} style={{display:'flex',gap:'1.5em',alignItems:'flex-start',padding:'1.5em',border:'1px solid #eaecf0',borderRadius:'1em'}}>
+                  <div style={{fontSize:'2em',fontWeight:700,color:'#88b2ff',flexShrink:0,lineHeight:1}}>{s.step}</div>
+                  <div>
+                    <div style={{fontWeight:600,fontSize:'1.1em',marginBottom:'0.25em'}}>{s.title}</div>
+                    <p style={{margin:0,color:'#475467',lineHeight:1.6}}>{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Program package summary */}
           <div style={{background:'#000040',borderRadius:'1em',padding:'2em',color:'#fff',marginBottom:'4em'}}>
@@ -123,26 +190,6 @@ export default function AirlinePilotPathwayPage() {
             </div>
             <div style={{marginTop:'1.5em',fontSize:'0.85em',color:'rgba(255,255,255,0.5)'}}>
               *Certificates earned: Private Pilot · Instrument Rating · Commercial Pilot ASEL/AMEL · CFI · CFI-I
-            </div>
-          </div>
-
-          {/* Steps to become an airline pilot */}
-          <div style={{marginBottom:'4em'}}>
-            <h3 className="heading-3m" style={{marginBottom:'1.5em'}}>Steps to Become an Airline Pilot</h3>
-            <div style={{display:'flex',flexDirection:'column',gap:'1em'}}>
-              {[
-                { step: '01', title: 'Get a First Class Medical', desc: 'Required before beginning ATP training. Schedule with an FAA-authorized Aviation Medical Examiner.' },
-                { step: '02', title: 'Enroll in the Airline Pilot Program', desc: 'Complete Private Pilot → Instrument Rating → Commercial Pilot → CFI → Multi-engine Commercial Add-on.' },
-                { step: '03', title: 'Join the GPA Instructor Team', desc: 'GPA graduates receive hiring priority. Instruct for approximately 14 months to build toward the 1,500-hour ATP minimum. Hiring based on availability — not guaranteed.' },
-              ].map(s => (
-                <div key={s.step} style={{display:'flex',gap:'1.5em',alignItems:'flex-start',padding:'1.5em',border:'1px solid #eaecf0',borderRadius:'1em'}}>
-                  <div style={{fontSize:'2em',fontWeight:700,color:'#88b2ff',flexShrink:0,lineHeight:1}}>{s.step}</div>
-                  <div>
-                    <div style={{fontWeight:600,fontSize:'1.1em',marginBottom:'0.25em'}}>{s.title}</div>
-                    <p style={{margin:0,color:'#475467',lineHeight:1.6}}>{s.desc}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
