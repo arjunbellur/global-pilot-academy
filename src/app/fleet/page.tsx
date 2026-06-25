@@ -10,7 +10,7 @@ const FLEET = [
   { aircraft: 'Cessna 152',         tail: 'N46134',  rate: '$128/hr',        notes: 'Garmin 430 · IFR equipped · Fuel incl.' },
   { aircraft: 'Cessna 152',         tail: 'N24752',  rate: '$128/hr',        notes: 'Garmin 430 · IFR equipped · Fuel incl.' },
   { aircraft: 'Cessna 152',         tail: 'N48810',  rate: '$128/hr',        notes: 'Garmin 430 · IFR equipped · Fuel incl.' },
-  { aircraft: 'Cessna 152',         tail: 'N65546',  rate: '$128/hr',        notes: 'Currently out of service' },
+  { aircraft: 'Cessna 152',         tail: 'N65546',  rate: '$128/hr',        notes: 'Fuel incl.' },
   { aircraft: 'Cessna 172L',        tail: 'N3911Q',  rate: '$155/hr',        notes: 'Garmin 430 · IFR equipped · Fuel incl.' },
   { aircraft: 'Cessna 172M',        tail: 'N5095R',  rate: '$160/hr',        notes: 'Fuel incl.' },
   { aircraft: 'Cessna 172M',        tail: 'N64173',  rate: '$160/hr',        notes: 'Fuel incl.' },
@@ -21,8 +21,7 @@ const FLEET = [
   { aircraft: 'Cessna 172N',        tail: 'N4725G',  rate: '$160/hr',        notes: 'Garmin 430 · IFR equipped · Fuel incl.' },
   { aircraft: 'Cessna 172N',        tail: 'N733DN',  rate: '$170/hr',        notes: 'Garmin 430 · IFR equipped · Fuel incl.' },
   { aircraft: 'Cessna 172RG',       tail: 'N5316R',  rate: '$186/hr',        notes: 'Complex aircraft · Fuel incl.' },
-  { aircraft: 'Piper Cherokee 140', tail: 'N706PA',  rate: '$155/hr',        notes: 'King KX155 Nav/Com · Fuel incl.' },
-  { aircraft: 'Piper Arrow III',    tail: 'N19886H', rate: '$186/hr',        notes: 'Garmin 430 · IFR · Complex · Fuel incl.' },
+  { aircraft: 'Piper Arrow III',    tail: 'N1986H',  rate: '$186/hr',        notes: 'Garmin 430 · IFR · Complex · Fuel incl.' },
   { aircraft: 'Piper Seneca',       tail: 'N87MB',   rate: '$410/hr (dual)', notes: 'Garmin 430 · IFR equipped · Fuel incl.' },
   { aircraft: 'Piper Seneca II',    tail: 'N315EB',  rate: '$410/hr (dual)', notes: 'Garmin 530 · IFR · Turbocharged · Fuel incl.' },
   { aircraft: 'Piper Seneca II',    tail: 'N6206H',  rate: '$410/hr (dual)', notes: 'Twin engine · IFR equipped · Fuel incl.' },
@@ -39,7 +38,7 @@ export default function FleetPage() {
             <div className="overline-small" style={{color:'#506db2',marginBottom:'1rem'}}>KVDF, Tampa FL</div>
             <h1 style={{fontSize:'2.75rem',fontWeight:700,color:'#000040',margin:'0 0 1rem',lineHeight:1.15}}>The Largest Training Fleet in Tampa Bay</h1>
             <p style={{color:'#475467',fontSize:'1.05em',lineHeight:1.7,margin:0}}>
-              23 aircraft across single-engine and multi-engine platforms. Fuel included across the fleet. In-house maintenance keeps every plane airworthy and ready to fly.
+              22 aircraft across single-engine and multi-engine platforms. Fuel included across the fleet. In-house maintenance keeps every plane airworthy and ready to fly.
             </p>
           </div>
         </div>
@@ -47,7 +46,7 @@ export default function FleetPage() {
         {/* Stats row */}
         <div style={{maxWidth:'900px',margin:'0 auto',padding:'0 2rem 3rem',display:'grid',gridTemplateColumns:'repeat(4, 1fr)',gap:'1.5rem'}}>
           {[
-            { value: '23', label: 'Aircraft' },
+            { value: '22', label: 'Aircraft' },
             { value: 'IFR', label: 'Equipped Fleet' },
             { value: 'Garmin 430', label: 'Standard Avionics' },
             { value: 'Fuel Incl.', label: 'Across Fleet' },
