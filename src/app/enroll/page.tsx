@@ -63,8 +63,8 @@ export default function EnrollPage() {
             <p style={{color:'rgba(255,255,255,0.65)',fontSize:'0.9em',lineHeight:1.7,margin:'0 0 1.5rem'}}>
               For U.S. citizens, permanent residents, and domestic students.
             </p>
-            <Link href="/admissions/us-requirements" className="button-style-2h" style={{justifyContent:'center'}}>
-              View Requirements &amp; Apply
+            <Link href="/apply/domestic" className="button-style-2h" style={{justifyContent:'center'}}>
+              Apply Now
             </Link>
           </div>
 
@@ -80,8 +80,8 @@ export default function EnrollPage() {
             <p style={{color:'rgba(255,255,255,0.65)',fontSize:'0.9em',lineHeight:1.7,margin:'0 0 1.5rem'}}>
               GPA is I-20 authorized. We assist with visa applications and TSA clearance.
             </p>
-            <Link href="/admissions/apply-international" className="button-style-2h" style={{justifyContent:'center'}}>
-              International Admissions
+            <Link href="/apply/international" className="button-style-2h" style={{justifyContent:'center'}}>
+              Apply Now
             </Link>
           </div>
         </div>

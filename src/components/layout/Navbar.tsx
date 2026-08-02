@@ -155,7 +155,7 @@ export default function Navbar() {
           ))}
 
           <div className="gpa-mobile-section-title">Resources & About</div>
-          {[...RESOURCES_LINKS, ...ABOUT_LINKS].map(l => (
+          {[...RESOURCES_LINKS, ...ABOUT_LINKS.filter(a => !RESOURCES_LINKS.some(r => r.href === a.href))].map(l => (
             <Link key={l.href} href={l.href} className="gpa-mobile-link" onClick={() => setMobileOpen(false)}>{l.label}</Link>
           ))}
 
